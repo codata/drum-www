@@ -8,4 +8,4 @@ cta_secondary_link: "/news-events/"
 order: 1
 ---
 
-The CODATA DRUM Task Group coordinates international efforts to ensure that units of measurement are represented in a consistent, machine-readable, and interoperable way across all scientific disciplines.
+The CODATA DRUM Task Group coordinates international efforts to ensure that units of measurement are represented in a consistent, machine-actionable, and interoperable way across all scientific disciplines—laying the critical foundation for AI-ready data and automated scientific reasoning.

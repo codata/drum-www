@@ -4,6 +4,32 @@ title: Tools & Resources
 permalink: /resources/
 ---
 
+{% block head_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "DRUM Tools & Resources Registry",
+  "description": "A curated registry of digital tools, databases, service frameworks, and publications designed to support the digital representation of units of measurement for human and machine systems.",
+  "itemListElement": [
+    {% for tool in resources %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "item": {
+        "@type": "CreativeWork",
+        "name": "{{ tool.name | escape }}",
+        "description": "{{ tool.description | escape }}",
+        "url": "{{ tool.link }}",
+        "license": "{{ tool.license | escape }}"
+      }
+    }{{ "," if not loop.last }}
+    {% endfor %}
+  ]
+}
+</script>
+{% endblock %}
+
 <div class="py-24 bg-theme-bg">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <!-- Header -->

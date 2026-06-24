@@ -1,6 +1,6 @@
 name: DRUM
 fullName: Digital Representation of Units of Measurement
-tagline: Working to increase awareness, education, and implementation of digital unit representation across communities.
+tagline: Enabling AI-ready data and machine-actionable science by standardizing digital units of measurement across global communities.
 hero:
   badge: CODATA Task Group
   bookCard:
@@ -11,7 +11,7 @@ hero:
 pages:
   members:
     title: Task Group Membership
-    lead: DRUM brings together international experts in metrology, data standards, and scientific unions to make units of measurement machine-readable.
+    lead: DRUM brings together international experts in metrology, data standards, and AI/machine intelligence to make units of measurement machine-actionable and AI-ready.
     join:
       title: Get Involved
       description: We welcome cooperation and participation from representatives of International Scientific Unions and Associations.
@@ -20,12 +20,12 @@ pages:
       email: mailto:drum@codata.org
   resources:
     title: Tools & Resources
-    lead: Explore inventories, standards registries, and reference materials designed to support the digital representation of units.
+    lead: Explore inventories, standards registries, and reference materials designed to make units accessible to humans, machines, and AI systems alike.
   news:
     title: Latest News & Events
     lead: Stay updated with announcements, workshops, and publications from the DRUM Task Group.
 footer:
-  description: The CODATA Digital Representation of Units of Measurement (DRUM) Task Group works to mobilize scientific communities and unions to implement standardized, machine-readable representations of units.
+  description: The CODATA Digital Representation of Units of Measurement (DRUM) Task Group works to build the foundation for AI-ready data, enabling machine intelligence and global scientific communities to seamlessly parse and compute standardized units.
   attribution: A <a href='https://codata.org' target='_blank' class='text-theme-accent hover:underline underline-offset-4 pointer-events-auto'>CODATA</a> Task Group.
   links:
     framework:

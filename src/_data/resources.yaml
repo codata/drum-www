@@ -1,17 +1,17 @@
 - name: Digital Unit Representation Inventory
-  description: A curated registry maintained by CODATA identifying various digital systems, catalogs, and databases that represent units of measurement.
+  description: "A curated registry maintained by CODATA identifying digital systems that represent units, serving as a baseline reference for training AI systems and semantic agents."
   link: https://codata.org/initiatives/task-groups/drum/the-digital-unit-representation-inventory/
   license: Open Access
   logo: ""
 
 - name: Units of Measurement Interoperability Service (UMIS)
-  description: A prototype service framework designed to facilitate digital translation, alignment, and interoperability between different unit systems.
+  description: "A prototype service framework designed to facilitate digital translation, semantic alignment, and machine-actionable interoperability between different unit systems."
   link: https://codata.org/initiatives/task-groups/drum/
   license: Open Source
   logo: ""
 
 - name: SI Reference Point
-  description: A prototype digital tool supporting the BIPM's digital SI framework to establish a reference standard for units of measurement online.
+  description: "A prototype digital tool supporting the BIPM's digital SI framework to establish a machine-resolvable reference standard for units of measurement online."
   link: https://codata.org/initiatives/task-groups/drum/
   license: Open Access
   logo: ""
@@ -23,7 +23,7 @@
   logo: ""
 
 - name: CODATA-DRUM Draft Book
-  description: The deeper technical companion book and implementation guide outlining standard digital representation patterns for units.
+  description: "A technical companion and implementation guide outlining standard digital representation patterns and metadata standards to ensure datasets are AI-ready."
   link: https://stuchalk.github.io/CODATA-DRUM/
   license: CC-BY-4.0
   logo: ""

@@ -4,6 +4,47 @@ title: Membership
 permalink: /membership/
 ---
 
+{% block head_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "DRUM Task Group Membership and Meetings",
+  "description": "Directory of the CODATA Digital Representation of Units of Measurement (DRUM) Task Group chairs, secretaries, active members, and past members, along with the rotating global meeting schedule.",
+  "mainEntity": {
+    "@type": "Committee",
+    "name": "CODATA DRUM Task Group",
+    "member": [
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Chair",
+        "member": {
+          "@type": "Person",
+          "name": "Jeremy Frey",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "University of Southampton"
+          }
+        }
+      },
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Secretary",
+        "member": {
+          "@type": "Person",
+          "name": "Stuart Chalk",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "University of North Florida"
+          }
+        }
+      }
+    ]
+  }
+}
+</script>
+{% endblock %}
+
 <div class="py-24 bg-theme-bg" x-data="meetingPlanner()">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 items-center">

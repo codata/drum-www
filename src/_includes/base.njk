@@ -25,6 +25,28 @@
     
     <!-- Custom Tailwind Styles -->
     <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Global JSON-LD Schema Markup (Machine Intelligence / SEO / AEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ site.name }}",
+      "alternateName": "{{ site.fullName }}",
+      "url": "https://codata.github.io/drum-www/",
+      "description": "{{ site.tagline | escape }}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CODATA",
+        "url": "https://codata.org",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://codata.org/wp-content/uploads/2020/09/CODATA-DRUM-Logo.png"
+        }
+      }
+    }
+    </script>
+    {% block head_schema %}{% endblock %}
 </head>
 <body x-data="{ theme: $persist('dark'), menuOpen: false }" :data-theme="theme" class="antialiased min-h-screen flex flex-col transition-colors duration-300">
     
