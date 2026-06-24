@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* 
+  Custom Theme Tokens via CSS Variables.
+  These variables dictate the structure of the themes.
+*/
+
+@theme {
+  /* DRUM Professional Light (Default) */
+  --color-theme-bg: #f1f5f9;
+  --color-theme-surface: #cbd5e1; /* slightly darker light blue-gray/slate for better contrast */
+  --color-theme-text: #0a0f1d;
+  --color-theme-muted: #334155;
+  --color-theme-accent: #0a0f1d;
+  --color-theme-accent-fg: #ffffff;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius-theme: 8px;
+}
+
+[data-theme="dark"] {
+  /* DRUM Tech-Forward Dark (More blackish to match logo) */
+  --color-theme-bg: #080c14;
+  --color-theme-surface: #111827;
+  --color-theme-text: #f8fafc;
+  --color-theme-muted: #9ca3af;
+  --color-theme-accent: #f3f4f6;
+  --color-theme-accent-fg: #080c14;
+}
+
+body {
+  background-color: var(--color-theme-bg);
+  color: var(--color-theme-text);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Glassmorphism helpers */
+.glass {
+  background: color-mix(in srgb, var(--color-theme-surface) 85%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-theme-text) 10%, transparent);
+}

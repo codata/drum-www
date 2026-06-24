@@ -1,0 +1,29 @@
+{
+  "name": "drum-www",
+  "version": "1.0.0",
+  "description": "CODATA Digital Representation of Units of Measurement (DRUM) Website",
+  "scripts": {
+    "prestart": "node -e \"require('fs').mkdirSync('_site/assets/css', { recursive: true })\"",
+    "start": "npm-run-all -p dev:*",
+    "dev:11ty": "eleventy --serve --watch",
+    "dev:tailwind": "tailwindcss -i ./src/styles/tailwind.css -o ./_site/assets/css/style.css --watch",
+    "prebuild": "node -e \"require('fs').mkdirSync('_site/assets/css', { recursive: true })\"",
+    "build": "npm-run-all -s build:*",
+    "build:eleventy": "eleventy",
+    "build:tailwind": "tailwindcss -i ./src/styles/tailwind.css -o ./_site/assets/css/style.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@tailwindcss/cli": "^4.0.0",
+    "@tailwindcss/typography": "^0.5.15",
+    "alpinejs": "^3.14.8",
+    "markdown-it": "^14.1.1",
+    "markdown-it-link-attributes": "^4.0.1",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^4.0.0"
+  }
+}

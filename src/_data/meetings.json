@@ -1,0 +1,32 @@
+[
+  {
+    "group": "EAOP",
+    "name": "East Asia / Oceania / Pacific",
+    "utc": "2026-06-17T03:00:00Z"
+  },
+  {
+    "group": "EUAWA",
+    "name": "Europe / Africa / West Asia",
+    "utc": "2026-06-17T11:00:00Z"
+  },
+  {
+    "group": "EUAWA",
+    "name": "Europe / Africa / West Asia",
+    "utc": "2026-07-01T11:00:00Z"
+  },
+  {
+    "group": "AMER",
+    "name": "Americas",
+    "utc": "2026-07-01T18:00:00Z"
+  },
+  {
+    "group": "AMER",
+    "name": "Americas",
+    "utc": "2026-07-15T18:00:00Z"
+  },
+  {
+    "group": "EAOP",
+    "name": "East Asia / Oceania / Pacific",
+    "utc": "2026-07-16T03:00:00Z"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Digital Unit Representation Inventory",
+    "description": "A curated registry maintained by CODATA identifying various digital systems, catalogs, and databases that represent units of measurement.",
+    "link": "https://codata.org/initiatives/task-groups/drum/the-digital-unit-representation-inventory/",
+    "license": "Open Access",
+    "logo": ""
+  },
+  {
+    "name": "Units of Measurement Interoperability Service (UMIS)",
+    "description": "A prototype service framework designed to facilitate digital translation, alignment, and interoperability between different unit systems.",
+    "link": "https://codata.org/initiatives/task-groups/drum/",
+    "license": "Open Source",
+    "logo": ""
+  },
+  {
+    "name": "SI Reference Point",
+    "description": "A prototype digital tool supporting the BIPM's digital SI framework to establish a reference standard for units of measurement online.",
+    "link": "https://codata.org/initiatives/task-groups/drum/",
+    "license": "Open Access",
+    "logo": ""
+  },
+  {
+    "name": "Nature Commentary: Stop Squandering Data",
+    "description": "The landmark publication 'Stop squandering data: make units of measurement machine-readable' outlining challenges and solutions for digital metrology.",
+    "link": "https://www.nature.com/articles/d41586-022-01233-w",
+    "license": "Nature Editorial",
+    "logo": ""
+  },
+  {
+    "name": "CODATA-DRUM Draft Book",
+    "description": "The deeper technical companion book and implementation guide outlining standard digital representation patterns for units.",
+    "link": "https://stuchalk.github.io/CODATA-DRUM/",
+    "license": "CC-BY-4.0",
+    "logo": ""
+  }
+]

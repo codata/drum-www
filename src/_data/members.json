@@ -1,0 +1,90 @@
+{
+  "chairs": [
+    {
+      "name": "Jeremy Frey",
+      "affiliation": "University of Southampton"
+    }
+  ],
+  "secretaries": [
+    {
+      "name": "Stuart Chalk",
+      "affiliation": "University of North Florida"
+    }
+  ],
+  "members": [
+    {
+      "name": "Aileen Day",
+      "affiliation": "University of Southampton"
+    },
+    {
+      "name": "Cyrus Walther",
+      "affiliation": "International Association of Physics Students"
+    },
+    {
+      "name": "Gyorgy Gyomai",
+      "affiliation": "OECD"
+    },
+    {
+      "name": "Jan Martin Keil",
+      "affiliation": "German Aerospace Center"
+    },
+    {
+      "name": "Lars Bärring",
+      "affiliation": "Lund University"
+    },
+    {
+      "name": "Maximilian Gruber",
+      "affiliation": "Physikalisch-Technische Bundesanstalt"
+    },
+    {
+      "name": "Michael Ward",
+      "affiliation": "Elsevier"
+    },
+    {
+      "name": "Pascal Heus",
+      "affiliation": "CODATA / Freelance"
+    },
+    {
+      "name": "Steven Emmerson",
+      "affiliation": "Retired, NSF Unidata Program Center"
+    },
+    {
+      "name": "Toshihiro Ashino",
+      "affiliation": "Association for Computing Machinery"
+    },
+    {
+      "name": "Richard Brown",
+      "affiliation": "National Physical Laboratory (NPL)"
+    },
+    {
+      "name": "Richard Hartshorn",
+      "affiliation": "University of Canterbury"
+    },
+    {
+      "name": "Simon Hodson",
+      "affiliation": "CODATA"
+    },
+    {
+      "name": "Sirko Schindler",
+      "affiliation": "German Aerospace Center"
+    }
+  ],
+  "past": [
+    {
+      "name": "Robert J. Hanisch",
+      "affiliation": "NIST"
+    },
+    {
+      "name": "Simon Cox",
+      "affiliation": ""
+    },
+    {
+      "name": "Joachim Meier",
+      "affiliation": "Physikalisch-Technische Bundesanstalt"
+    },
+    {
+      "name": "Janet Miles",
+      "affiliation": ""
+    }
+  ]
+}
