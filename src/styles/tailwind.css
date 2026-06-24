@@ -23,12 +23,12 @@
 
 [data-theme="dark"] {
   /* DRUM Tech-Forward Dark (More blackish to match logo) */
-  --color-theme-bg: #080c14;
-  --color-theme-surface: #111827;
+  --color-theme-bg: #0e1525;
+  --color-theme-surface: #1b253b;
   --color-theme-text: #f8fafc;
   --color-theme-muted: #9ca3af;
   --color-theme-accent: #f3f4f6;
-  --color-theme-accent-fg: #080c14;
+  --color-theme-accent-fg: #0e1525;
 }
 
 body {
