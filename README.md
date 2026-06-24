@@ -2,6 +2,9 @@
 
 This repository houses the modern, high-performance website for the **CODATA Digital Representation of Units of Measurement (DRUM)** Task Group.
 
+**Live Website:** [https://codata.github.io/drum-www/](https://codata.github.io/drum-www/)
+**Maintenance & Content Guide:** [GUIDE.md](./GUIDE.md)
+
 The site acts as the primary communication hub for members, scientific unions, and stakeholders working to make units of measurement machine-readable.
 
 ---
