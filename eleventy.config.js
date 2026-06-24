@@ -1,8 +1,13 @@
 const { HtmlBasePlugin } = require("@11ty/eleventy");
 const markdownItLinkAttributes = require("markdown-it-link-attributes");
+const yaml = require("js-yaml");
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = function (eleventyConfig) {
+    // Enable YAML data files
+    eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+    eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
+
     // Automatically transpile and correctly prefix all absolute URLs to map cleanly to gh-pages subdirectories
     eleventyConfig.addPlugin(HtmlBasePlugin);
 

@@ -53,7 +53,7 @@ Designed for speed, accessibility, and modern aesthetics:
 ```bash
 ├── content/              # Sequential Markdown files for Homepage sections
 ├── src/
-│   ├── _data/            # Structured JSON data (News, Members, Resources, etc.)
+│   ├── _data/            # Structured YAML data (News, Members, Resources, etc.)
 │   ├── _includes/        # Layouts (Nunjucks) and templates
 │   ├── assets/
 │   │   ├── images/       # DRUM logo assets
@@ -73,10 +73,11 @@ The site is built to make it easy to keep content up-to-date by separating site 
 
 | Content Area | File Path | Format |
 | :--- | :--- | :--- |
-| **Global Titles & UI Texts** | `src/_data/site.json` | JSON |
-| **Members List** | `src/_data/members.json` | JSON |
-| **Resources & Tools Registry** | `src/_data/resources.json` | JSON |
-| **News & Announcements** | `src/_data/news.json` | JSON |
+| **Global Titles & UI Texts** | `src/_data/site.yaml` | YAML |
+| **Members List** | `src/_data/members.yaml` | YAML |
+| **Resources & Tools Registry** | `src/_data/resources.yaml` | YAML |
+| **News & Announcements** | `src/_data/news.yaml` | YAML |
+| **Upcoming Meetings** | `src/_data/meetings.yaml` | YAML |
 | **Homepage Narrative Copy** | `content/` folder | Markdown |
 
 ---

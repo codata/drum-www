@@ -3,7 +3,7 @@
 This project aims to maintain a modern, high-performance website for the **CODATA Digital Representation of Units of Measurement (DRUM)** task group. The site serves as the primary communication hub for members, scientific unions, and external stakeholders.
 
 ## 🎯 Objectives
-- **Maintainability:** Content is strictly separated into Markdown files and JSON data structures.
+- **Maintainability:** Content is strictly separated into Markdown files and YAML data structures.
 - **Responsiveness:** A fluid mobile, tablet, and desktop layout with a responsive header.
 - **Accessibility:** Adherence to WCAG guidelines and contrast compliance.
 - **Design Aesthetic:** A premium, dark-themed black/charcoal professional aesthetic using Tailwind v4.0 and glassmorphic navigation.
@@ -18,10 +18,11 @@ The site uses a Tailwind CSS v4 `@theme` architecture. The color system is tailo
 ## 📝 Content Architecture
 
 ### Data-Driven files (located in `src/_data/`)
-- `site.json`: Global UI labels, taglines, email links (`mailto:drum@codata.org`), and footer links.
-- `members.json`: Flat list of seeded task group members (Chair, Secretary, Active Members, Past Members). No subgroups are modeled.
-- `resources.json`: Catalogs key toolkits, inventories, and articles (Digital Unit Representation Inventory, UMIS, SI Reference Point, and the Nature commentary).
-- `news.json`: JSON structure driven news events and ticker updates.
+- `site.yaml`: Global UI labels, taglines, email links (`mailto:drum@codata.org`), and footer links.
+- `members.yaml`: Flat list of seeded task group members (Chair, Secretary, Active Members, Past Members). No subgroups are modeled.
+- `resources.yaml`: Catalogs key toolkits, inventories, and articles (Digital Unit Representation Inventory, UMIS, SI Reference Point, and the Nature commentary).
+- `news.yaml` & `sortedNews.js`: YAML structure driven news events and ticker updates.
+- `meetings.yaml`: Seeded list of timezone-aware task group meetings.
 
 ### Page Routes
 - `/` (Home): Compiled from `index.njk` and sequential homepage markdown sections in the `content/` directory.

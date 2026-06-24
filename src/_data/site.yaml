@@ -1,0 +1,48 @@
+name: DRUM
+fullName: Digital Representation of Units of Measurement
+tagline: Working to increase awareness, education, and implementation of digital unit representation across communities.
+hero:
+  badge: CODATA Task Group
+  bookCard:
+    prefix: Draft Companion Book
+    title: The DRUM Book
+    description: Read the draft guide on digital units of measurement and standards.
+    cta: Read Draft
+pages:
+  members:
+    title: Task Group Membership
+    lead: DRUM brings together international experts in metrology, data standards, and scientific unions to make units of measurement machine-readable.
+    join:
+      title: Get Involved
+      description: We welcome cooperation and participation from representatives of International Scientific Unions and Associations.
+      cta: Join the Group
+      formUrl: https://forms.gle/4TjFBqaNoigK97BJ6
+      email: mailto:drum@codata.org
+  resources:
+    title: Tools & Resources
+    lead: Explore inventories, standards registries, and reference materials designed to support the digital representation of units.
+  news:
+    title: Latest News & Events
+    lead: Stay updated with announcements, workshops, and publications from the DRUM Task Group.
+footer:
+  description: The CODATA Digital Representation of Units of Measurement (DRUM) Task Group works to mobilize scientific communities and unions to implement standardized, machine-readable representations of units.
+  attribution: A <a href='https://codata.org' target='_blank' class='text-theme-accent hover:underline underline-offset-4 pointer-events-auto'>CODATA</a> Task Group.
+  links:
+    framework:
+      - text: Membership
+        url: /membership/
+      - text: Tools & Resources
+        url: /resources/
+      - text: News & Events
+        url: /news-events/
+    resources:
+      - text: The DRUM Book
+        url: https://stuchalk.github.io/CODATA-DRUM/
+        external: true
+      - text: Nature Article
+        url: https://www.nature.com/articles/d41586-022-01233-w
+        external: true
+      - text: CODATA Website
+        url: https://codata.org/initiatives/task-groups/drum/
+        external: true
+  copyright: "&copy; 2026 <a href='https://codata.org' target='_blank' class='hover:text-theme-accent transition-colors'>CODATA</a>. All rights reserved."
