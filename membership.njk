@@ -15,30 +15,39 @@ permalink: /membership/
     "@type": "Committee",
     "name": "CODATA DRUM Task Group",
     "member": [
+      {% set allMembers = [] %}
+      {% for person in members.chairs %}
+        {% set dummy = allMembers.push({"name": person.name, "role": "Chair", "org": person.affiliation, "country": person.country}) %}
+      {% endfor %}
+      {% for person in members.secretaries %}
+        {% set dummy = allMembers.push({"name": person.name, "role": "Secretary", "org": person.affiliation, "country": person.country}) %}
+      {% endfor %}
+      {% for person in members.members %}
+        {% set dummy = allMembers.push({"name": person.name, "role": "Member", "org": person.affiliation, "country": person.country}) %}
+      {% endfor %}
+      {% for person in members.past %}
+        {% set dummy = allMembers.push({"name": person.name, "role": "Past Member", "org": person.affiliation, "country": person.country}) %}
+      {% endfor %}
+      {% for item in allMembers %}
       {
         "@type": "OrganizationRole",
-        "roleName": "Chair",
+        "roleName": "{{ item.role }}",
         "member": {
           "@type": "Person",
-          "name": "Jeremy Frey",
+          "name": "{{ item.name | escape }}",
+          {% if item.org or item.country %}
           "worksFor": {
             "@type": "Organization",
-            "name": "University of Southampton"
+            "name": "{{ item.org | default('Independent') | escape }}"{% if item.country %},
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "{{ item.country | escape }}"
+            }{% endif %}
           }
+          {% endif %}
         }
-      },
-      {
-        "@type": "OrganizationRole",
-        "roleName": "Secretary",
-        "member": {
-          "@type": "Person",
-          "name": "Stuart Chalk",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "University of North Florida"
-          }
-        }
-      }
+      }{{ "," if not loop.last }}
+      {% endfor %}
     ]
   }
 }
@@ -201,6 +210,15 @@ permalink: /membership/
                             <span class="flex-shrink-0 px-2 py-0.5 bg-theme-accent/15 text-theme-accent rounded text-[10px] font-bold uppercase tracking-wider">Chair</span>
                         </div>
                         <p class="text-sm text-theme-muted leading-snug">{{ person.affiliation }}</p>
+                        {% if person.country %}
+                        <div class="text-xs text-theme-muted/70 mt-2.5 flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5 opacity-65" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>{{ person.country }}</span>
+                        </div>
+                        {% endif %}
                     </div>
                     {% endfor %}
 
@@ -211,6 +229,15 @@ permalink: /membership/
                             <span class="flex-shrink-0 px-2 py-0.5 bg-theme-accent/15 text-theme-accent rounded text-[10px] font-bold uppercase tracking-wider">Secretary</span>
                         </div>
                         <p class="text-sm text-theme-muted leading-snug">{{ person.affiliation }}</p>
+                        {% if person.country %}
+                        <div class="text-xs text-theme-muted/70 mt-2.5 flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5 opacity-65" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>{{ person.country }}</span>
+                        </div>
+                        {% endif %}
                     </div>
                     {% endfor %}
                 </div>
@@ -228,6 +255,15 @@ permalink: /membership/
                                 <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
                             </div>
                             <p class="text-xs text-theme-muted leading-snug">{{ person.affiliation }}</p>
+                            {% if person.country %}
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>{{ person.country }}</span>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}
@@ -252,6 +288,15 @@ permalink: /membership/
                                     <span class="italic text-opacity-50 text-theme-muted">No Affiliation Registered</span>
                                 {% endif %}
                             </p>
+                            {% if person.country %}
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>{{ person.country }}</span>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}

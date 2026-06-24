@@ -1,44 +1,67 @@
 chairs:
   - name: Jeremy Frey
     affiliation: University of Southampton
+    country: United Kingdom
 secretaries:
   - name: Stuart Chalk
     affiliation: University of North Florida
+    country: United States
 members:
   - name: Aileen Day
     affiliation: University of Southampton
+    country: United Kingdom
+  - name: Frédéric Meynadier
+    affiliation: BIPM
+    country: France
   - name: Cyrus Walther
     affiliation: International Association of Physics Students
+    country: Germany
   - name: Gyorgy Gyomai
     affiliation: OECD
+    country: France
   - name: Jan Martin Keil
     affiliation: German Aerospace Center
+    country: Germany
   - name: Lars Bärring
     affiliation: Lund University
+    country: Sweden
   - name: Maximilian Gruber
     affiliation: Physikalisch-Technische Bundesanstalt
+    country: Germany
   - name: Michael Ward
     affiliation: Elsevier
+    country: United Kingdom
   - name: Pascal Heus
     affiliation: CODATA / Freelance
+    country: United States
   - name: Steven Emmerson
     affiliation: Retired, NSF Unidata Program Center
+    country: United States
   - name: Toshihiro Ashino
     affiliation: Association for Computing Machinery
+    country: Japan
   - name: Richard Brown
     affiliation: National Physical Laboratory (NPL)
+    country: United Kingdom
   - name: Richard Hartshorn
     affiliation: University of Canterbury
+    country: New Zealand
   - name: Simon Hodson
     affiliation: CODATA
+    country: France
   - name: Sirko Schindler
     affiliation: German Aerospace Center
+    country: Germany
 past:
   - name: Robert J. Hanisch
     affiliation: NIST
+    country: United States
   - name: Simon Cox
     affiliation: ""
+    country: Australia
   - name: Joachim Meier
     affiliation: Physikalisch-Technische Bundesanstalt
+    country: Germany
   - name: Janet Miles
-    affiliation: ""
+    affiliation: BIPM
+    country: United Kingdom
