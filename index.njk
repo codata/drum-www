@@ -6,9 +6,14 @@ layout: base.njk
     {% if section.data.order == 1 %}
         <!-- HERO SECTION -->
         <section id="section-{{ section.data.order }}" class="relative pt-20 pb-12 lg:pt-24 lg:pb-16 flex flex-col items-center min-h-[90vh] lg:min-h-screen isolate">
-            <!-- Premium Background: Abstract Rings -->
+            <!-- Premium Background: Blended Hero Images & Abstract Rings -->
             <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                 <div class="absolute inset-0 flex items-center justify-end overflow-hidden opacity-30">
+                 <!-- Blended Background Images -->
+                 <div class="hero-bg-image hero-dark-bg"></div>
+                 <div class="hero-bg-image hero-light-bg"></div>
+
+                 <!-- Abstract Rings for depth -->
+                 <div class="absolute inset-0 flex items-center justify-end overflow-hidden opacity-15">
                      <div class="absolute w-[800px] h-[800px] right-[-10%] rounded-full border border-theme-text/20 flex items-center justify-center">
                          <div class="w-[600px] h-[600px] rounded-full border border-theme-text/20 flex items-center justify-center">
                              <div class="w-[400px] h-[400px] rounded-full border border-theme-text/20"></div>
