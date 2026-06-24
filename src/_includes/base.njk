@@ -50,6 +50,16 @@
 </head>
 <body x-data="{ theme: $persist('dark'), menuOpen: false }" :data-theme="theme" class="antialiased min-h-screen flex flex-col transition-colors duration-300">
     
+    <!-- Site-wide Background Texture (Abstract Rings) -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none opacity-30 select-none">
+         <div class="absolute inset-0 flex items-center justify-end overflow-hidden">
+             <div class="absolute w-[800px] h-[800px] right-[-10%] rounded-full border border-theme-text/20 flex items-center justify-center">
+                 <div class="w-[600px] h-[600px] rounded-full border border-theme-text/20 flex items-center justify-center">
+                     <div class="w-[400px] h-[400px] rounded-full border border-theme-text/20"></div>
+                 </div>
+             </div>
+         </div>
+    </div>
     <!-- Temporary Draft Review Banner -->
     <div class="bg-amber-500 text-slate-900 py-2 px-4 text-center text-xs font-bold tracking-wider uppercase relative z-[60]">
         ⚠️ Draft Staging Site — For Review Purposes Only
