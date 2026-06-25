@@ -42,7 +42,7 @@ permalink: "news-events/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumb
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {% for item in pagedNews %}
-            <article id="{{ item.id }}" class="flex flex-col bg-theme-surface/50 border border-theme-text/5 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 scroll-mt-32 relative">
+            <article id="{{ item.id }}" class="flex flex-col bg-theme-surface border border-theme-text/5 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 scroll-mt-32 relative">
                 <div class="p-8 flex-grow">
                     <div class="flex items-center gap-3 mb-4">
                         <span class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider 
