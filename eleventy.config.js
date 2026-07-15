@@ -32,6 +32,19 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    // Custom filter to get a clean section ID from page data or fileSlug
+    eleventyConfig.addFilter("sectionSlug", (section) => {
+        if (section.data && section.data.slug) {
+            return section.data.slug;
+        }
+        if (section.data && section.data.id) {
+            return section.data.id;
+        }
+        const fileSlug = section.fileSlug || "";
+        return fileSlug.replace(/^\d+-/, "");
+    });
+
+
     // Custom collection to ensure sections are ordered correctly
     eleventyConfig.addCollection("sections", function (collectionApi) {
         return collectionApi.getFilteredByGlob("content/*.md").sort(function (a, b) {

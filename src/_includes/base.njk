@@ -82,7 +82,7 @@
                     <div class="ml-10 flex items-baseline space-x-6">
                         {% for section in collections.sections %}
                             {% if section.data.title and section.data.order > 1 %}
-                            <a href="/#section-{{ section.data.order }}" class="text-theme-muted hover:text-theme-accent transition-colors duration-200 px-3 py-2 text-sm font-semibold tracking-tight uppercase">
+                            <a href="/#{{ section | sectionSlug }}" class="text-theme-muted hover:text-theme-accent transition-colors duration-200 px-3 py-2 text-sm font-semibold tracking-tight uppercase">
                                 {{ section.data.nav_title | default(section.data.title) }}
                             </a>
                             {% endif %}
@@ -122,7 +122,7 @@
             <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                  {% for section in collections.sections %}
                     {% if section.data.title and section.data.order > 1 %}
-                    <a href="/#section-{{ section.data.order }}" @click="menuOpen = false" class="block rounded-md px-3 py-2 text-base font-semibold tracking-tight uppercase hover:bg-theme-accent hover:text-white">{{ section.data.nav_title | default(section.data.title) }}</a>
+                    <a href="/#{{ section | sectionSlug }}" @click="menuOpen = false" class="block rounded-md px-3 py-2 text-base font-semibold tracking-tight uppercase hover:bg-theme-accent hover:text-white">{{ section.data.nav_title | default(section.data.title) }}</a>
                     {% endif %}
                 {% endfor %}
             </div>

@@ -5,7 +5,7 @@ layout: base.njk
 {% for section in collections.sections %}
     {% if section.data.order == 1 %}
         <!-- HERO SECTION -->
-        <section id="section-{{ section.data.order }}" class="relative pt-20 pb-12 lg:pt-24 lg:pb-16 flex flex-col items-center min-h-[90vh] lg:min-h-screen isolate">
+        <section id="{{ section | sectionSlug }}" class="relative pt-20 pb-12 lg:pt-24 lg:pb-16 flex flex-col items-center min-h-[90vh] lg:min-h-screen isolate">
             <!-- Premium Background: Blended Hero Images & Abstract Rings -->
             <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                  <!-- Blended Background Images -->
@@ -145,7 +145,7 @@ layout: base.njk
 
     {% else %}
         <!-- STANDARD SECTION -->
-        <section id="section-{{ section.data.order }}" class="py-12 lg:py-16 relative scroll-mt-24 {% if loop.index % 2 == 0 %}bg-theme-surface/50{% endif %}">
+        <section id="{{ section | sectionSlug }}" class="py-12 lg:py-16 relative scroll-mt-24 {% if loop.index % 2 == 0 %}bg-theme-surface/50{% endif %}">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
                     
