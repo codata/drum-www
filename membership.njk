@@ -54,9 +54,9 @@ permalink: /membership/
 </script>
 {% endblock %}
 
-<div class="py-24" x-data="meetingPlanner()">
+<div class="py-16" x-data="meetingPlanner()">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-10 items-center">
             <div class="lg:col-span-8">
                 <h1 class="text-4xl font-bold tracking-tight text-theme-text sm:text-5xl mb-6">{{ site.pages.members.title }}</h1>
                 <p class="text-xl text-theme-muted leading-relaxed">
@@ -97,7 +97,7 @@ permalink: /membership/
         </div>
 
         <!-- Task Group Roles Navigation -->
-        <nav class="sticky top-[80px] z-30 mb-16 py-4 bg-theme-bg/95 backdrop-blur-xl -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+        <nav class="sticky top-[80px] z-30 mb-10 py-4 bg-theme-bg/95 backdrop-blur-xl -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
             <div class="flex flex-wrap items-center gap-3">
                 <a href="#meetings" class="inline-flex items-center px-4 py-2 rounded-full bg-theme-surface border border-theme-text/10 text-xs font-bold text-theme-text/70 hover:bg-theme-accent hover:text-white hover:border-theme-accent hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
                     Upcoming Meetings
@@ -114,9 +114,9 @@ permalink: /membership/
             </div>
         </nav>
 
-        <div class="space-y-20">
+        <div class="space-y-12">
             <!-- Upcoming Meetings -->
-            <section id="meetings" class="border-t border-theme-text/10 pt-12 pb-16 scroll-mt-32">
+            <section id="meetings" class="border-t border-theme-text/10 pt-10 scroll-mt-32">
                 <h2 class="text-2xl font-bold text-theme-text mb-2">Upcoming Meetings</h2>
                 <p class="text-sm text-theme-muted mb-8 max-w-2xl">
                     DRUM rotating meetings occur every two weeks to support our global membership base. The upcoming schedules for each timezone group are shown below in both UTC and your local browser time.
@@ -200,7 +200,7 @@ permalink: /membership/
                 </div>
             </section>
             <!-- Leadership -->
-            <section id="leadership" class="border-t border-theme-text/10 pt-12 scroll-mt-32">
+            <section id="leadership" class="border-t border-theme-text/10 pt-10 scroll-mt-32">
                 <h2 class="text-2xl font-bold text-theme-text mb-8">Leadership</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {% for person in members.chairs %}
@@ -244,7 +244,7 @@ permalink: /membership/
             </section>
 
             <!-- Active Members -->
-            <section id="active-members" class="border-t border-theme-text/10 pt-12 scroll-mt-32">
+            <section id="active-members" class="border-t border-theme-text/10 pt-10 scroll-mt-32">
                 <h2 class="text-2xl font-bold text-theme-text mb-8">Active Members</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {% for person in members.members %}
@@ -271,7 +271,7 @@ permalink: /membership/
             </section>
 
             <!-- Past Members -->
-            <section id="past-members" class="border-t border-theme-text/10 pt-12 scroll-mt-32">
+            <section id="past-members" class="border-t border-theme-text/10 pt-10 scroll-mt-32">
                 <h2 class="text-2xl font-bold text-theme-text mb-8">Past Members</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {% for person in members.past %}
