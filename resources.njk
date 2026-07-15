@@ -30,52 +30,106 @@ permalink: /resources/
 </script>
 {% endblock %}
 
-<div class="py-24">
+<div class="py-16" x-data="resourcesFilter()">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <!-- Header -->
-        <div class="max-w-3xl mb-16">
+        <div class="max-w-3xl mb-12">
             <h1 class="text-4xl font-bold tracking-tight text-theme-text sm:text-5xl mb-6">{{ site.pages.resources.title }}</h1>
             <p class="text-xl text-theme-muted leading-relaxed">
                 {{ site.pages.resources.lead }}
             </p>
         </div>
 
+        <!-- Filter Controls -->
+        <div class="mb-12 border-b border-theme-text/10 pb-8">
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap gap-3 items-center mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-theme-muted mr-2">Category:</span>
+                <button @click="activeCategory = 'All'; activeTag = 'All'"
+                        :class="activeCategory === 'All' ? 'bg-theme-accent text-theme-accent-fg border-theme-accent shadow-premium' : 'bg-theme-surface hover:bg-theme-surface/80 text-theme-text border-theme-text/10'"
+                        class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border transition-all duration-300 cursor-pointer">
+                    All
+                </button>
+                <template x-for="cat in getCategories()" :key="cat">
+                    <button @click="activeCategory = cat; activeTag = 'All'"
+                            :class="activeCategory === cat ? 'bg-theme-accent text-theme-accent-fg border-theme-accent shadow-premium' : 'bg-theme-surface hover:bg-theme-surface/80 text-theme-text border-theme-text/10'"
+                            class="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border transition-all duration-300 cursor-pointer"
+                            x-text="cat">
+                    </button>
+                </template>
+            </div>
+
+            <!-- Tag Pills (dynamic based on active category) -->
+            <div class="flex flex-wrap gap-2 items-center" x-show="getTags().length > 0">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-theme-muted mr-2">Refine Tag:</span>
+                <button @click="activeTag = 'All'"
+                        :class="activeTag === 'All' ? 'bg-theme-text text-theme-bg border-theme-text' : 'bg-theme-surface/50 hover:bg-theme-surface text-theme-muted border-theme-text/5'"
+                        class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded border transition-all duration-200 cursor-pointer">
+                    All
+                </button>
+                <template x-for="tag in getTags()" :key="tag">
+                    <button @click="activeTag = tag"
+                            :class="activeTag === tag ? 'bg-theme-text text-theme-bg border-theme-text' : 'bg-theme-surface/50 hover:bg-theme-surface text-theme-muted border-theme-text/5'"
+                            class="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded border transition-all duration-200 cursor-pointer"
+                            x-text="tag">
+                    </button>
+                </template>
+            </div>
+        </div>
+
         <!-- Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {% for tool in resources %}
-            <div class="flex flex-col bg-theme-surface border border-theme-text/5 rounded-xl p-8 hover:border-theme-accent/30 transition-all duration-300 group shadow-sm hover:shadow-xl scroll-mt-32">
+            <div x-show='shouldShow({{ tool.category | dump | safe }}, {{ tool.tags | dump | safe }})'
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 class="flex flex-col bg-theme-surface border border-theme-text/5 rounded-xl p-5 hover:border-theme-accent/30 transition-all duration-300 group shadow-sm hover:shadow-xl scroll-mt-32">
                 <!-- Tool Header -->
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="flex-shrink-0 w-16 h-16 bg-white/10 rounded-xl overflow-hidden shadow-inner flex items-center justify-center p-2 group-hover:bg-white/20 transition-all duration-500">
+                <div class="flex items-start gap-3 mb-4">
+                    <div class="flex-shrink-0 w-11 h-11 bg-white/10 rounded-lg overflow-hidden shadow-inner flex items-center justify-center p-1.5 group-hover:bg-white/20 transition-all duration-500 mt-0.5">
                         {% if tool.logo %}
                         <img src="{{ tool.logo }}" alt="{{ tool.name }} Logo" class="max-w-full max-h-full object-contain filter group-hover:scale-110 transition-transform duration-500">
                         {% else %}
                         <div class="w-full h-full flex items-center justify-center text-theme-accent opacity-40 group-hover:opacity-100 transition-opacity">
-                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
                         </div>
                         {% endif %}
                     </div>
-                    <div>
-                        <h2 class="text-lg font-bold text-theme-text group-hover:text-theme-accent transition-colors leading-tight mb-1">{{ tool.name }}</h2>
-                        <span class="inline-block px-2 py-0.5 bg-theme-text/5 rounded text-[10px] font-bold text-theme-muted uppercase tracking-wider">{{ tool.license }}</span>
+                    <div class="flex-grow">
+                        <h2 class="text-base font-bold text-theme-text leading-tight mb-2">
+                            <a href="{{ tool.link }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-theme-accent hover:underline decoration-2 underline-offset-2 transition-colors">
+                                {{ tool.name }}
+                                <svg class="w-3.5 h-3.5 opacity-50 group-hover:text-theme-accent group-hover:opacity-100 transition-opacity flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </h2>
+                        <!-- Tags in header -->
+                        {% if tool.tags %}
+                        <div class="flex flex-wrap gap-1.5">
+                            {% for tag in tool.tags %}
+                            <button @click="activeTag = '{{ tag }}'" 
+                                    :class="activeTag === '{{ tag }}' ? 'bg-theme-accent text-theme-accent-fg border-theme-accent' : 'bg-theme-surface border-theme-text/10 text-theme-accent hover:bg-theme-accent hover:text-theme-accent-fg hover:border-theme-accent'"
+                                    class="inline-flex items-center px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider border cursor-pointer transition-all duration-200">
+                                {{ tag }}
+                            </button>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
 
                 <!-- Description -->
-                <p class="text-sm text-theme-muted mb-8 leading-relaxed flex-grow italic">
+                <p class="text-xs text-theme-muted mb-4 leading-relaxed flex-grow italic">
                     {{ tool.description }}
                 </p>
 
-                <!-- Actions -->
-                <div class="mt-auto pt-6 border-t border-theme-text/5 flex items-center justify-between">
-                    <a href="{{ tool.link }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-theme-accent hover:underline decoration-2 underline-offset-4">
-                        Access Resource
-                        <svg class="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                    </a>
+                <!-- Actions / License at bottom -->
+                <div class="mt-auto pt-3 border-t border-theme-text/5 text-[9px] text-theme-muted uppercase tracking-wider flex items-center justify-between">
+                    <span>License: <strong class="text-theme-text">{{ tool.license }}</strong></span>
                 </div>
             </div>
             {% endfor %}
@@ -102,3 +156,37 @@ permalink: /resources/
         </div>
     </div>
 </div>
+
+<script>
+function resourcesFilter() {
+    return {
+        activeCategory: 'All',
+        activeTag: 'All',
+        resources: {{ resources | dump | safe }},
+        
+        getCategories() {
+            const cats = new Set(this.resources.map(r => r.category).filter(Boolean));
+            return Array.from(cats).sort();
+        },
+        
+        getTags() {
+            const tags = new Set();
+            this.resources.forEach(r => {
+                if (this.activeCategory === 'All' || r.category === this.activeCategory) {
+                    if (r.tags && Array.isArray(r.tags)) {
+                        r.tags.forEach(t => tags.add(t));
+                    }
+                }
+            });
+            return Array.from(tags).sort();
+        },
+        
+        shouldShow(category, tags) {
+            const matchCat = this.activeCategory === 'All' || category === this.activeCategory;
+            const matchTag = this.activeTag === 'All' || (tags && tags.includes(this.activeTag));
+            return matchCat && matchTag;
+        }
+    };
+}
+</script>
+

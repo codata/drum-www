@@ -1,40 +1,55 @@
-- name: Fudamental physical constants API
+- name: Fundamental physical constants API
   description: "A semantic gateway and API to the physical fundamental constants. Built for science, designed for discovery and machine actionability."
   link: https://api.codata.org/drum/constants
-  license: Open Access
+  license: MIT
   logo: ""
+  category: "Tools & APIs"
+  tags:
+    - API
+    - constants
+    - semantic
 
-- name: Fudamental physical constants knowledge base
+- name: Fundamental physical constants knowledge base
   description: >
     A comprehensive digitization project that transforms CODATA fundamental physical constants into machine-actionable 
     and legacy formats, enabling seamless integration with modern data science workflows, AI systems, and agent-based applications.
   link: https://github.com/codata/drum-constants
-  license: Open Access
+  license: CC BY 4.0
   logo: ""
-
-- name: Units of Measurement Interoperability Service (UMIS)
-  description: "A prototype service framework designed to facilitate digital translation, semantic alignment, and machine-actionable interoperability between different unit systems."
-  link:
-  license: Open Source
-  logo: ""
+  category: "Standards & Ontologies"
+  tags:
+    - constants
+    - github
 
 - name: SI Reference Point
   description: "A prototype digital tool supporting the BIPM's digital SI framework to establish a machine-resolvable reference standard for units of measurement online."
   link: https://si-digital-framework.org/SI
-  license: Open Access
+  license: CC BY 3.0
   logo: ""
+  category: "Tools & APIs"
+  tags:
+    - API
+    - SI
+    - semantic
+    - github
 
 - name: "Nature Commentary: Stop Squandering Data"
   description: "The landmark publication 'Stop squandering data: make units of measurement machine-readable' outlining challenges and solutions for digital metrology."
   link: https://www.nature.com/articles/d41586-022-01233-w
   license: Nature Editorial
   logo: ""
+  category: "Publications & Guides"
+  tags:
+    - publication
 
 - name: CODATA-DRUM Draft Book
   description: "A technical companion and implementation guide outlining standard digital representation patterns and metadata standards to ensure datasets are AI-ready."
   link: https://stuchalk.github.io/CODATA-DRUM/
   license: CC-BY-4.0
   logo: ""
+  category: "Publications & Guides"
+  tags:
+    - publication
 
 - name: QUDT
   description: >
@@ -43,3 +58,19 @@
   link: https://www.qudt.org/
   license: CC-BY-4.0
   logo: ""
+  category: "Standards & Ontologies"
+  tags:
+    - github
+    - semantic
+
+- name: Unified Code for Units of Measure (UCUM)
+  description: >
+    A code system intended to include all units of measures contemporarily used in international science, 
+    engineering, and medicine, providing unambiguous electronic representation and conversion.
+  link: https://ucum.org/
+  license: UCUM License
+  logo: ""
+  category: "Standards & Ontologies"
+  tags:
+    - semantic
+
