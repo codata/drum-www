@@ -11,7 +11,7 @@ members:
     affiliation: University of Southampton
     country: United Kingdom
   - name: Frédéric Meynadier
-    affiliation: BIPM
+    affiliation: Bureau International des Poids et Mesures (BIPM)
     country: France
   - name: Cyrus Walther
     affiliation: TU Dortmund University
@@ -19,20 +19,17 @@ members:
   - name: Gyorgy Gyomai
     affiliation: OECD
     country: France
-  - name: Frédéric Meynadier
-    affiliation: BIPM
-    country: France
   - name: Jan Martin Keil
     affiliation: German Aerospace Center
     country: Germany
   - name: Jean-Laurent Hippolyte
-    affiliation: National Physical Laboratory
+    affiliation: National Physical Laboratory (NPL)
     country: United Kingdom
   - name: Lars Bärring
-    affiliation: Lund University
+    affiliation: Retired, Lund University
     country: Sweden
   - name: Maximilian Gruber
-    affiliation: Physikalisch-Technische Bundesanstalt
+    affiliation: Physikalisch-Technische Bundesanstalt (PTB)
     country: Germany
   - name: Michael Ward
     affiliation: Elsevier
@@ -58,16 +55,16 @@ members:
   - name: Sirko Schindler
     affiliation: German Aerospace Center
     country: Germany
-past:
+past members:
   - name: Robert J. Hanisch
-    affiliation: NIST
+    affiliation: Retired, NIST
     country: United States
   - name: Simon Cox
-    affiliation: ""
+    affiliation: Retired, CSIRO
     country: Australia
   - name: Joachim Meier
-    affiliation: Physikalisch-Technische Bundesanstalt
+    affiliation: Physikalisch-Technische Bundesanstalt (PTB)
     country: Germany
   - name: Janet Miles
-    affiliation: BIPM
-    country: United Kingdom
+    affiliation: OIML
+    country: France
