@@ -19,9 +19,15 @@ members:
   - name: Gyorgy Gyomai
     affiliation: OECD
     country: France
+  - name: Frédéric Meynadier
+    affiliation: BIPM
+    country: France
   - name: Jan Martin Keil
     affiliation: German Aerospace Center
     country: Germany
+  - name: Jean-Laurent Hippolyte
+    affiliation: National Physical Laboratory
+    country: United Kingdom
   - name: Lars Bärring
     affiliation: Lund University
     country: Sweden
