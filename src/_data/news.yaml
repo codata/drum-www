@@ -1,3 +1,14 @@
+- id: si-reference-point-v1
+  date: "2026-06-18"
+  type: announcement
+  title: First Stable Version of the SI Reference Point Released
+  summary: Version 1.0.0 of the SI Reference Point has been officially released by the BIPM as part of the SI Digital Framework, establishing a machine-readable digital representation of the SI Brochure.
+  link: https://www.bipm.org/en/-/2026-06-18-the-first-stable-version-of-the-si-reference-point
+  tags:
+    - SI
+    - BIPM
+    - interoperability
+
 - id: drum-renewal-2025
   date: "2025-10-28"
   type: announcement
@@ -15,8 +26,8 @@
   summary: "DRUM hosted a panel discussion on 'FAIR Units of Measurement: Successes and Roadblocks' at SciDataCon 2025, bringing together representatives from multiple scientific unions."
   link: https://codata.org/initiatives/task-groups/drum/
   tags:
-    - SciDataCon
-    - Interoperability
+    - conference
+    - interoperability
 
 - id: nature-commentary-2022
   date: "2022-05-18"
