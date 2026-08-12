@@ -34,12 +34,9 @@ jobs:
           PATH_PREFIX: "/"
 
       - name: Publish output to production-build branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout --orphan production-build
-          git rm -rf .
-          cp -r ./_site/. .
-          git add .
-          git commit -m "chore: production build from ${{ github.sha }}"
-          git push origin production-build --force
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: production-build
+          force_orphan: false
