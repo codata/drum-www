@@ -1,7 +1,7 @@
 chairs:
-  - name: Jeremy Frey
-    affiliation: University of Southampton
-    country: United Kingdom
+  - name: Pascal Heus
+    affiliation: CODATA / Freelance
+    country: Canada
 secretaries:
   - name: Stuart Chalk
     affiliation: University of North Florida
@@ -25,6 +25,9 @@ members:
   - name: Jean-Laurent Hippolyte
     affiliation: National Physical Laboratory (NPL)
     country: United Kingdom
+  - name: Jeremy Frey
+    affiliation: University of Southampton
+    country: United Kingdom
   - name: Lars Bärring
     affiliation: Retired, Lund University
     country: Sweden
@@ -34,9 +37,6 @@ members:
   - name: Michael Ward
     affiliation: Elsevier
     country: United Kingdom
-  - name: Pascal Heus
-    affiliation: CODATA / Freelance
-    country: United States
   - name: Steven Emmerson
     affiliation: Retired, NSF Unidata Program Center
     country: United States

@@ -53,7 +53,7 @@ module.exports = function (eleventyConfig) {
     });
 
     return {
-        pathPrefix: "/drum-www/",
+        pathPrefix: process.env.PATH_PREFIX !== undefined ? process.env.PATH_PREFIX : "/drum-www/",
         dir: {
             input: ".", // Top level is input because content is at /content
             includes: "src/_includes",

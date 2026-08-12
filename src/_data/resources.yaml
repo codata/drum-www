@@ -22,7 +22,11 @@
     - github
 
 - name: SI Reference Point
-  description: "A prototype digital tool supporting the BIPM's digital SI framework to establish a machine-resolvable reference standard for units of measurement online."
+  description: >
+    The SI Reference Point is a digital representation of the SI Brochure, 
+    which defines the International System of Units (SI), the world’s internationally agreed system of units. 
+    By making core SI reference information available in machine-readable form, 
+    the SI Reference Point helps ensure that the SI can be used consistently in digital applications and data exchange. .
   link: https://si-digital-framework.org/SI
   license: CC BY 3.0
   logo: ""
@@ -73,4 +77,3 @@
   category: "Standards & Ontologies"
   tags:
     - semantic
-
