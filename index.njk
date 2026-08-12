@@ -24,12 +24,10 @@ layout: base.njk
                     
                     <!-- Left Column: Hero Text -->
                     <div class="lg:col-span-7 text-center lg:text-left">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-theme-surface border border-theme-accent/30 text-theme-accent text-sm font-semibold mb-8 shadow-sm backdrop-blur-md">
-                            <span class="relative flex h-2.5 w-2.5">
-                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-theme-accent opacity-75"></span>
-                              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-theme-accent"></span>
-                            </span>
-                            {{ site.hero.badge }}
+                        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-theme-surface/80 border border-theme-accent/30 text-theme-accent text-sm font-semibold mb-8 shadow-sm backdrop-blur-md">
+                            <img src="/assets/images/codata-logo.svg" alt="CODATA" class="h-4 w-auto opacity-85">
+                            <span class="w-1 h-1 rounded-full bg-theme-accent/50"></span>
+                            <span class="tracking-wide">{{ site.hero.badge }}</span>
                         </div>
                         
                         <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-theme-text drop-shadow-sm">
