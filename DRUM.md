@@ -6,11 +6,11 @@ This document aggregates the requirements, brand specifications, content structu
 - **Aesthetic Overhaul:** Transition from CDIF's theme to a darker, premium, blackish/charcoal theme that aligns with the official DRUM logo.
 - **Unified Directory:** Model all members in a single flat list (with role demarcations like Chair, Secretary, Member, and Past Member) since DRUM does not utilize subgroups.
 - **Prominent Resource Anchors:** Replace the external landscape directory with a local **Tools & Resources** page and home page section highlighting the *Digital Unit Representation Inventory*, *SI Reference Point*, *UMIS*, and *Nature Comment Paper*.
-- **Companion Links:** Integrate the draft DRUM book (`https://stuchalk.github.io/CODATA-DRUM/`) prominently within the Hero card.
+- **Companion Links:** Integrate the draft DRUM book (`https://codata.github.io/drum-book/`) prominently within the Hero card.
 
-## 📂 Source of Truth & References
-1. **Official Page:** [CODATA DRUM Initiative](https://codata.org/initiatives/task-groups/drum/)
-2. **Technical Book:** [CODATA-DRUM Draft Book](https://stuchalk.github.io/CODATA-DRUM/)
+## 🔗 Key External References
+1. **Nature Commentary:** [Stop Squandering Data](https://www.nature.com/articles/d41586-022-01233-w)
+2. **Technical Book:** [CODATA-DRUM Draft Book](https://codata.github.io/drum-book/)
 3. **Contact Email:** `drum@codata.org`
 
 ---

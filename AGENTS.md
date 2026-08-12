@@ -32,7 +32,7 @@ The site uses a Tailwind CSS v4 `@theme` architecture. The color system is tailo
 - `/privacy/` & `/terms/` (`privacy.md`, `terms.md`): Legal compliance.
 
 ### Homepage Markdown Sections (located in `content/`)
-- `01-hero.md`: Landing hero copy and CTAs (links to the DRUM draft book: `https://stuchalk.github.io/CODATA-DRUM/`).
+- `01-hero.md`: Landing hero copy and CTAs (links to the DRUM draft book: `https://codata.github.io/drum-book/`).
 - `02-mission.md`: The mission of the DRUM group.
 - `03-about.md`: Detailed explanation of what the group is about.
 - `04-membership.md`: Teaser for membership with meeting frequencies and links to the membership page.

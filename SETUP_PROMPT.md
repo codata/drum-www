@@ -14,7 +14,7 @@ Adapt the structure, theme, and content for DRUM instead of copying CDIF verbati
 Use sources in this priority order when they conflict:
 
 1. Current DRUM website content at https://codata.org/initiatives/task-groups/drum/
-2. Draft DRUM book at https://stuchalk.github.io/CODATA-DRUM/
+2. Draft DRUM book at https://codata.github.io/drum-book/
 3. Existing CDIF site structure and implementation patterns
 4. Web knowledge / research for supplemental context only
 

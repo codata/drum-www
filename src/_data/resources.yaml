@@ -48,7 +48,7 @@
 
 - name: CODATA-DRUM Draft Book
   description: "A technical companion and implementation guide outlining standard digital representation patterns and metadata standards to ensure datasets are AI-ready."
-  link: https://stuchalk.github.io/CODATA-DRUM/
+  link: https://codata.github.io/drum-book/
   license: CC-BY-4.0
   logo: ""
   category: "Publications & Guides"
