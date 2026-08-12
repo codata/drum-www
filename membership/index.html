@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership</title>
+    <meta name="description" content="Enabling AI-ready data and machine-actionable science by standardizing digital units of measurement across global communities.">
+    
+    <!-- Open Graph & Twitter Meta Tags for Reviewer Link Sharing -->
+    <meta property="og:title" content="DRUM - Digital Representation of Units of Measurement">
+    <meta property="og:description" content="Enabling AI-ready data and machine-actionable science by standardizing digital units of measurement across global communities. Prototype staging site.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://codata.org/wp-content/uploads/2020/09/CODATA-DRUM-Logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine JS Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.14.8/dist/cdn.min.js"></script>
+    <!-- Alpine JS Core -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    
+    <!-- Custom Tailwind Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Global JSON-LD Schema Markup (Machine Intelligence / SEO / AEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DRUM",
+      "alternateName": "Digital Representation of Units of Measurement",
+      "url": "https://codata.github.io/drum-www/",
+      "description": "Enabling AI-ready data and machine-actionable science by standardizing digital units of measurement across global communities.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CODATA",
+        "url": "https://codata.org",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://codata.org/wp-content/uploads/2020/09/CODATA-DRUM-Logo.png"
+        }
+      }
+    }
+    </script>
+    
+</head>
+<body x-data="{ theme: $persist('dark'), menuOpen: false }" :data-theme="theme" class="antialiased min-h-screen flex flex-col transition-colors duration-300">
+    
+    <!-- Site-wide Background Texture (Abstract Rings) -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none opacity-30 select-none">
+         <div class="absolute inset-0 flex items-center justify-end overflow-hidden">
+             <div class="absolute w-[800px] h-[800px] right-[-10%] rounded-full border border-theme-text/20 flex items-center justify-center">
+                 <div class="w-[600px] h-[600px] rounded-full border border-theme-text/20 flex items-center justify-center">
+                     <div class="w-[400px] h-[400px] rounded-full border border-theme-text/20"></div>
+                 </div>
+             </div>
+         </div>
+    </div>
+    <!-- Temporary Draft Review Banner -->
+    <div class="bg-amber-500 text-slate-900 py-2 px-4 text-center text-xs font-bold tracking-wider uppercase relative z-[60]">
+        ⚠️ Draft Staging Site — For Review Purposes Only
+    </div>
+    
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 w-full glass shadow-sm transition-all duration-300">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-20 items-center justify-between">
+                <!-- Logo -->
+                <div class="flex-shrink-0 group">
+                    <a href="/" class="flex items-center gap-3 relative">
+                        <div class="absolute inset-0 bg-white/40 blur-[16px] rounded-full scale-110 pointer-events-none transition-opacity duration-300 group-hover:bg-white/60"></div>
+                        <img class="relative z-10 h-10 w-auto transition-transform duration-300 group-hover:scale-105" src="/assets/images/drum_logo_150x100.png" alt="DRUM Logo">
+                    </a>
+                </div>
+                
+                <!-- Desktop nav -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        
+                            
+                        
+                            
+                            <a href="/#mission" class="text-theme-muted hover:text-theme-accent transition-colors duration-200 px-3 py-2 text-sm font-semibold tracking-tight uppercase">
+                                Mission
+                            </a>
+                            
+                        
+                            
+                            <a href="/#about" class="text-theme-muted hover:text-theme-accent transition-colors duration-200 px-3 py-2 text-sm font-semibold tracking-tight uppercase">
+                                About
+                            </a>
+                            
+                        
+                            
+                            <a href="/#membership" class="text-theme-muted hover:text-theme-accent transition-colors duration-200 px-3 py-2 text-sm font-semibold tracking-tight uppercase">
+                                Membership
+                            </a>
+                            
+                        
+                            
+                            <a href="/#resources" class="text-theme-muted hover:text-theme-accent transition-colors duration-200 px-3 py-2 text-sm font-semibold tracking-tight uppercase">
+                                Resources
+                            </a>
+                            
+                        
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <!-- Light/Dark Toggle -->
+                    <button @click="theme = (theme === 'light' ? 'dark' : 'light')" 
+                            class="p-2 rounded-full hover:bg-theme-surface transition-colors focus:outline-none border border-theme-text/10"
+                            :title="theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'">
+                        <!-- Sun Icon -->
+                        <svg x-show="theme === 'dark'" class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path></svg>
+                        <!-- Moon Icon -->
+                        <svg x-show="theme === 'light'" class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <div class="-mr-2 flex md:hidden">
+                        <button @click="menuOpen = !menuOpen" type="button" class="inline-flex items-center justify-center rounded-md p-2 hover:bg-theme-surface hover:text-theme-accent focus:outline-none">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="h-6 w-6" x-show="!menuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <svg class="h-6 w-6" x-show="menuOpen" style="display: none;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu panel -->
+        <div x-show="menuOpen" class="md:hidden glass border-t border-gray-200">
+            <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                 
+                    
+                
+                    
+                    <a href="/#mission" @click="menuOpen = false" class="block rounded-md px-3 py-2 text-base font-semibold tracking-tight uppercase hover:bg-theme-accent hover:text-white">Mission</a>
+                    
+                
+                    
+                    <a href="/#about" @click="menuOpen = false" class="block rounded-md px-3 py-2 text-base font-semibold tracking-tight uppercase hover:bg-theme-accent hover:text-white">About</a>
+                    
+                
+                    
+                    <a href="/#membership" @click="menuOpen = false" class="block rounded-md px-3 py-2 text-base font-semibold tracking-tight uppercase hover:bg-theme-accent hover:text-white">Membership</a>
+                    
+                
+                    
+                    <a href="/#resources" @click="menuOpen = false" class="block rounded-md px-3 py-2 text-base font-semibold tracking-tight uppercase hover:bg-theme-accent hover:text-white">Resources</a>
+                    
+                
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "DRUM Task Group Membership and Meetings",
+  "description": "Directory of the CODATA Digital Representation of Units of Measurement (DRUM) Task Group chairs, secretaries, active members, and past members, along with the rotating global meeting schedule.",
+  "mainEntity": {
+    "@type": "Committee",
+    "name": "CODATA DRUM Task Group",
+    "member": [
+      
+      
+        
+      
+      
+        
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Chair",
+        "member": {
+          "@type": "Person",
+          "name": "Pascal Heus",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "CODATA / Freelance",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Canada"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Secretary",
+        "member": {
+          "@type": "Person",
+          "name": "Stuart Chalk",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "University of North Florida",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "United States"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Aileen Day",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "University of Southampton",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "United Kingdom"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Frédéric Meynadier",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Bureau International des Poids et Mesures (BIPM)",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "France"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Cyrus Walther",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "TU Dortmund University",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Germany"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Gyorgy Gyomai",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "OECD",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "France"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Jan Martin Keil",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "German Aerospace Center",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Germany"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Jean-Laurent Hippolyte",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "National Physical Laboratory (NPL)",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "United Kingdom"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Jeremy Frey",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "University of Southampton",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "United Kingdom"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Lars Bärring",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Retired, Lund University",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Sweden"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Maximilian Gruber",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Physikalisch-Technische Bundesanstalt (PTB)",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Germany"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Michael Ward",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Elsevier",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "United Kingdom"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Steven Emmerson",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Retired, NSF Unidata Program Center",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "United States"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Toshihiro Ashino",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Association for Computing Machinery",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Japan"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Richard Brown",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "National Physical Laboratory (NPL)",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "United Kingdom"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Richard Hartshorn",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "University of Canterbury",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "New Zealand"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Simon Hodson",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "CODATA",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "France"
+            }
+          }
+          
+        }
+      },
+      
+      {
+        "@type": "OrganizationRole",
+        "roleName": "Member",
+        "member": {
+          "@type": "Person",
+          "name": "Sirko Schindler",
+          
+          "worksFor": {
+            "@type": "Organization",
+            "name": "German Aerospace Center",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Germany"
+            }
+          }
+          
+        }
+      }
+      
+    ]
+  }
+}
+</script>
+
+
+<div class="py-16" x-data="meetingPlanner()">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-10 items-center">
+            <div class="lg:col-span-8">
+                <h1 class="text-4xl font-bold tracking-tight text-theme-text sm:text-5xl mb-6">Task Group Membership</h1>
+                <p class="text-xl text-theme-muted leading-relaxed">
+                    DRUM brings together international experts in metrology, data standards, and AI/machine intelligence to make units of measurement machine-actionable and AI-ready.
+                </p>
+                
+                <div class="mt-6 flex flex-wrap gap-6 text-sm text-theme-muted">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-theme-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Meeting Rhythm: every couple of weeks, rotating across regional time zones.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-4">
+                <div class="p-6 bg-theme-surface rounded-xl border border-theme-accent/20 shadow-sm relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-theme-accent/5 rounded-full blur-2xl group-hover:bg-theme-accent/10 transition-colors"></div>
+                    
+                    <h2 class="text-xl font-bold text-theme-text mb-3 relative z-10">Get Involved</h2>
+                    <p class="text-sm text-theme-muted mb-6 relative z-10">We welcome cooperation and participation from representatives of International Scientific Unions and Associations.</p>
+                    
+                    <div class="flex flex-col gap-3 relative z-10">
+                        <a href="https://forms.gle/4TjFBqaNoigK97BJ6" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-[var(--radius-theme)] text-theme-accent-fg bg-theme-accent hover:bg-theme-accent/90 transition-all shadow-md hover:-translate-y-0.5">
+                            Join the Group
+                            <svg class="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        
+                        <a href="mailto:drum@codata.org" class="w-full inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold rounded-[var(--radius-theme)] text-theme-text bg-theme-surface hover:bg-theme-surface/85 border border-theme-text/10 transition-all">
+                            Contact: drum@codata.org
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task Group Roles Navigation -->
+        <nav class="sticky top-[80px] z-30 mb-10 py-4 bg-theme-bg/95 backdrop-blur-xl -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+            <div class="flex flex-wrap items-center gap-3">
+                <a href="#meetings" class="inline-flex items-center px-4 py-2 rounded-full bg-theme-surface border border-theme-text/10 text-xs font-bold text-theme-text/70 hover:bg-theme-accent hover:text-white hover:border-theme-accent hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
+                    Upcoming Meetings
+                </a>
+                <a href="#leadership" class="inline-flex items-center px-4 py-2 rounded-full bg-theme-surface border border-theme-text/10 text-xs font-bold text-theme-text/70 hover:bg-theme-accent hover:text-white hover:border-theme-accent hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
+                    Leadership
+                </a>
+                <a href="#active-members" class="inline-flex items-center px-4 py-2 rounded-full bg-theme-surface border border-theme-text/10 text-xs font-bold text-theme-text/70 hover:bg-theme-accent hover:text-white hover:border-theme-accent hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
+                    Active Members
+                </a>
+                <a href="#past-members" class="inline-flex items-center px-4 py-2 rounded-full bg-theme-surface border border-theme-text/10 text-xs font-bold text-theme-text/70 hover:bg-theme-accent hover:text-white hover:border-theme-accent hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
+                    Past Members
+                </a>
+            </div>
+        </nav>
+
+        <div class="space-y-12">
+            <!-- Upcoming Meetings -->
+            <section id="meetings" class="border-t border-theme-text/10 pt-10 scroll-mt-32">
+                <h2 class="text-2xl font-bold text-theme-text mb-2">Upcoming Meetings</h2>
+                <p class="text-sm text-theme-muted mb-8 max-w-2xl">
+                    DRUM rotating meetings occur every two weeks to support our global membership base. The upcoming schedules for each timezone group are shown below in both UTC and your local browser time.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- EUAWA -->
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-700 border border-blue-200 dark:bg-blue-500/10 dark:text-blue-400 dark:border-blue-400/20 mb-4">
+                                EUAWA Group
+                            </span>
+                            <h3 class="text-lg font-bold text-theme-text mb-2 animate-pulse-slow">Europe / Africa / West Asia</h3>
+                            <template x-if="euawaMeeting">
+                                <div class="space-y-3 mt-4">
+                                    <div>
+                                        <div class="text-[10px] uppercase font-bold text-theme-muted tracking-wider">UTC Time</div>
+                                        <div class="text-sm text-theme-text font-semibold" x-text="formatUTC(euawaMeeting.utc)"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-[10px] uppercase font-bold text-theme-muted tracking-wider">Your Local Time</div>
+                                        <div class="text-sm text-theme-accent font-bold" x-text="formatLocal(euawaMeeting.utc)"></div>
+                                    </div>
+                                </div>
+                            </template>
+                            <template x-if="!euawaMeeting">
+                                <p class="text-sm text-theme-muted italic mt-4">No upcoming meetings scheduled.</p>
+                            </template>
+                        </div>
+                    </div>
+                    
+                    <!-- AMER -->
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-700 border border-purple-200 dark:bg-purple-500/10 dark:text-purple-400 dark:border-purple-400/20 mb-4">
+                                AMER Group
+                            </span>
+                            <h3 class="text-lg font-bold text-theme-text mb-2 animate-pulse-slow">Americas</h3>
+                            <template x-if="amerMeeting">
+                                <div class="space-y-3 mt-4">
+                                    <div>
+                                        <div class="text-[10px] uppercase font-bold text-theme-muted tracking-wider">UTC Time</div>
+                                        <div class="text-sm text-theme-text font-semibold" x-text="formatUTC(amerMeeting.utc)"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-[10px] uppercase font-bold text-theme-muted tracking-wider">Your Local Time</div>
+                                        <div class="text-sm text-theme-accent font-bold" x-text="formatLocal(amerMeeting.utc)"></div>
+                                    </div>
+                                </div>
+                            </template>
+                            <template x-if="!amerMeeting">
+                                <p class="text-sm text-theme-muted italic mt-4">No upcoming meetings scheduled.</p>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- EAOP -->
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 border border-green-200 dark:bg-green-500/10 dark:text-green-400 dark:border-green-400/20 mb-4">
+                                EAOP Group
+                            </span>
+                            <h3 class="text-lg font-bold text-theme-text mb-2 animate-pulse-slow">East Asia / Oceania / Pacific</h3>
+                            <template x-if="eaopMeeting">
+                                <div class="space-y-3 mt-4">
+                                    <div>
+                                        <div class="text-[10px] uppercase font-bold text-theme-muted tracking-wider">UTC Time</div>
+                                        <div class="text-sm text-theme-text font-semibold" x-text="formatUTC(eaopMeeting.utc)"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-[10px] uppercase font-bold text-theme-muted tracking-wider">Your Local Time</div>
+                                        <div class="text-sm text-theme-accent font-bold" x-text="formatLocal(eaopMeeting.utc)"></div>
+                                    </div>
+                                </div>
+                            </template>
+                            <template x-if="!eaopMeeting">
+                                <p class="text-sm text-theme-muted italic mt-4">No upcoming meetings scheduled.</p>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Leadership -->
+            <section id="leadership" class="border-t border-theme-text/10 pt-10 scroll-mt-32">
+                <h2 class="text-2xl font-bold text-theme-text mb-8">Leadership</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm">
+                        <div class="flex justify-between items-start mb-4 gap-2">
+                            <h3 class="text-lg font-bold text-theme-text leading-tight">Pascal Heus</h3>
+                            <span class="flex-shrink-0 px-2 py-0.5 bg-theme-accent/15 text-theme-accent rounded text-[10px] font-bold uppercase tracking-wider">Chair</span>
+                        </div>
+                        <p class="text-sm text-theme-muted leading-snug">CODATA / Freelance</p>
+                        
+                        <div class="text-xs text-theme-muted/70 mt-2.5 flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5 opacity-65" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>Canada</span>
+                        </div>
+                        
+                    </div>
+                    
+
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm">
+                        <div class="flex justify-between items-start mb-4 gap-2">
+                            <h3 class="text-lg font-bold text-theme-text leading-tight">Stuart Chalk</h3>
+                            <span class="flex-shrink-0 px-2 py-0.5 bg-theme-accent/15 text-theme-accent rounded text-[10px] font-bold uppercase tracking-wider">Secretary</span>
+                        </div>
+                        <p class="text-sm text-theme-muted leading-snug">University of North Florida</p>
+                        
+                        <div class="text-xs text-theme-muted/70 mt-2.5 flex items-center gap-1.5">
+                            <svg class="w-3.5 h-3.5 opacity-65" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>United States</span>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- Active Members -->
+            <section id="active-members" class="border-t border-theme-text/10 pt-10 scroll-mt-32">
+                <h2 class="text-2xl font-bold text-theme-text mb-8">Active Members</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Aileen Day</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">University of Southampton</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>United Kingdom</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Frédéric Meynadier</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">Bureau International des Poids et Mesures (BIPM)</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>France</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Cyrus Walther</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">TU Dortmund University</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Germany</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Gyorgy Gyomai</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">OECD</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>France</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Jan Martin Keil</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">German Aerospace Center</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Germany</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Jean-Laurent Hippolyte</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">National Physical Laboratory (NPL)</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>United Kingdom</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Jeremy Frey</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">University of Southampton</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>United Kingdom</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Lars Bärring</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">Retired, Lund University</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Sweden</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Maximilian Gruber</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">Physikalisch-Technische Bundesanstalt (PTB)</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Germany</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Michael Ward</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">Elsevier</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>United Kingdom</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Steven Emmerson</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">Retired, NSF Unidata Program Center</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>United States</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Toshihiro Ashino</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">Association for Computing Machinery</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Japan</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Richard Brown</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">National Physical Laboratory (NPL)</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>United Kingdom</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Richard Hartshorn</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">University of Canterbury</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>New Zealand</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Simon Hodson</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">CODATA</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>France</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="bg-theme-surface border border-theme-text/5 rounded-xl p-6 hover:border-theme-accent/30 transition-all shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-base font-bold text-theme-text leading-tight">Sirko Schindler</h3>
+                                <span class="flex-shrink-0 px-2 py-0.5 bg-theme-text/5 text-theme-muted rounded text-[9px] font-bold uppercase tracking-wider">Member</span>
+                            </div>
+                            <p class="text-xs text-theme-muted leading-snug">German Aerospace Center</p>
+                            
+                            <div class="text-[11px] text-theme-muted/70 mt-2 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 opacity-65 text-theme-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span>Germany</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- Past Members -->
+            <section id="past-members" class="border-t border-theme-text/10 pt-10 scroll-mt-32">
+                <h2 class="text-2xl font-bold text-theme-text mb-8">Past Members</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function meetingPlanner() {
+    return {
+        meetingsList: [],
+        euawaMeeting: null,
+        amerMeeting: null,
+        eaopMeeting: null,
+        
+        init() {
+            this.meetingsList = [{"group":"AMER","name":"Americas","utc":"2026-07-15T18:00:00Z"},{"group":"EAOP","name":"East Asia / Oceania / Pacific","utc":"2026-07-16T03:00:00Z"},{"group":"EAOP","name":"East Asia / Oceania / Pacific","utc":"2026-07-29T03:00:00Z"},{"group":"EUAWA","name":"Europe / Africa / West Asia","utc":"2026-07-29T11:00:00Z"},{"group":"EUAWA","name":"Europe / Africa / West Asia","utc":"2026-08-12T11:00:00Z"},{"group":"AMER","name":"Americas","utc":"2026-08-12T18:00:00Z"},{"group":"AMER","name":"Americas","utc":"2026-08-26T18:00:00Z"},{"group":"EAOP","name":"East Asia / Oceania / Pacific","utc":"2026-08-27T03:00:00Z"},{"group":"EAOP","name":"East Asia / Oceania / Pacific","utc":"2026-09-09T03:00:00Z"},{"group":"EUAWA","name":"Europe / Africa / West Asia","utc":"2026-09-09T11:00:00Z"},{"group":"EUAWA","name":"Europe / Africa / West Asia","utc":"2026-09-23T11:00:00Z"},{"group":"AMER","name":"Americas","utc":"2026-09-23T18:00:00Z"},{"group":"AMER","name":"Americas","utc":"2026-10-07T18:00:00Z"},{"group":"EAOP","name":"East Asia / Oceania / Pacific","utc":"2026-10-08T03:00:00Z"}];
+            const now = new Date();
+            
+            // Filter future meetings
+            const futureMeetings = this.meetingsList.filter(m => new Date(m.utc) >= now);
+            
+            // Find next meeting for each group
+            this.euawaMeeting = futureMeetings.find(m => m.group === 'EUAWA') || null;
+            this.amerMeeting = futureMeetings.find(m => m.group === 'AMER') || null;
+            this.eaopMeeting = futureMeetings.find(m => m.group === 'EAOP') || null;
+        },
+        
+        formatUTC(utcString) {
+            const d = new Date(utcString);
+            const options = { 
+                weekday: 'short', 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                timeZone: 'UTC',
+                hour12: false
+            };
+            return d.toLocaleDateString('en-US', options) + ' UTC';
+        },
+        
+        formatLocal(utcString) {
+            const d = new Date(utcString);
+            const options = { 
+                weekday: 'short', 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: true
+            };
+            
+            const localStr = d.toLocaleDateString(undefined, options);
+            
+            // Try to extract time zone abbreviation
+            let tzAbbr = '';
+            try {
+                const parts = new Intl.DateTimeFormat(undefined, { timeZoneName: 'short' }).formatToParts(d);
+                const tzPart = parts.find(p => p.type === 'timeZoneName');
+                if (tzPart) {
+                    tzAbbr = ' (' + tzPart.value + ')';
+                }
+            } catch(e) {}
+            
+            return localStr + tzAbbr;
+        }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-theme-surface py-12 border-t border-theme-accent/10 mt-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <img class="h-12 w-auto mb-6 opacity-90 hover:opacity-100 transition-opacity" src="/assets/images/codata-logo.svg" alt="CODATA Logo">
+                    <p class="text-sm text-theme-muted max-w-sm leading-relaxed mb-4">The CODATA Digital Representation of Units of Measurement (DRUM) Task Group works to build the foundation for AI-ready data, enabling machine intelligence and global scientific communities to seamlessly parse and compute standardized units.</p>
+                    <p class="text-sm font-semibold text-theme-text opacity-90">A <a href='https://codata.org' target='_blank' class='text-theme-accent hover:underline underline-offset-4 pointer-events-auto'>CODATA</a> Task Group.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-theme-text opacity-70">Task Group</h3>
+                    <ul class="mt-4 space-y-2">
+                        
+                        <li><a href="/membership/" class="text-sm text-theme-muted hover:text-theme-accent transition-colors">Membership</a></li>
+                        
+                        <li><a href="/resources/" class="text-sm text-theme-muted hover:text-theme-accent transition-colors">Tools &amp; Resources</a></li>
+                        
+                        <li><a href="/news-events/" class="text-sm text-theme-muted hover:text-theme-accent transition-colors">News &amp; Events</a></li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-theme-text opacity-70">Resources</h3>
+                    <ul class="mt-4 space-y-2">
+                        
+                        <li><a href="https://codata.github.io/drum-book/" target="_blank" rel="noopener noreferrer" class="text-sm text-theme-muted hover:text-theme-accent transition-colors ">The DRUM Book</a></li>
+                        
+                        <li><a href="https://www.nature.com/articles/d41586-022-01233-w" target="_blank" rel="noopener noreferrer" class="text-sm text-theme-muted hover:text-theme-accent transition-colors ">Nature Article</a></li>
+                        
+                        <li><a href="https://codata.org/initiatives/task-groups/drum/" target="_blank" rel="noopener noreferrer" class="text-sm text-theme-muted hover:text-theme-accent transition-colors ">CODATA Website</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-theme-text/10 pt-8 flex justify-between items-center">
+                <p class="text-sm text-theme-muted">&copy; 2026 <a href='https://codata.org' target='_blank' class='hover:text-theme-accent transition-colors'>CODATA</a>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating Feedback Button -->
+    <a href="https://github.com/codata/drum-www/issues" target="_blank" class="fixed bottom-6 right-6 z-50 group flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-theme-surface/70 backdrop-blur-xl border border-theme-accent/20 text-sm font-semibold text-theme-text shadow-xl hover:shadow-theme-accent/20 hover:bg-theme-accent hover:text-white hover:border-theme-accent transition-all duration-300 transform hover:-translate-y-1">
+        <span class="relative flex h-2 w-2 mr-1">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-theme-accent opacity-75 group-hover:bg-white drop-shadow-md"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-theme-accent group-hover:bg-white"></span>
+        </span>
+        Feedback
+        <svg class="w-4 h-4 ml-1 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+    </a>
+
+</body>
+</html>
