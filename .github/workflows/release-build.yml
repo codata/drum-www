@@ -8,15 +8,19 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: production-build
+  cancel-in-progress: false
+
 jobs:
   build-production-branch:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "20.x"
           cache: "npm"
@@ -30,9 +34,9 @@ jobs:
           PATH_PREFIX: "/"
 
       - name: Publish output to production-build branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: production-build
-          force_orphan: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add --force ./_site
+          git commit --allow-empty -m "chore: production build from ${{ github.sha }}"
+          git push origin HEAD:refs/heads/production-build --force
