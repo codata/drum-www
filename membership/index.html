@@ -60,10 +60,15 @@
              </div>
          </div>
     </div>
-    <!-- Temporary Draft Review Banner -->
-    <div class="bg-amber-500 text-slate-900 py-2 px-4 text-center text-xs font-bold tracking-wider uppercase relative z-[60]">
+    <!-- Temporary Draft Review Banner (only displayed on github.io domain) -->
+    <div id="staging-banner" class="hidden bg-amber-500 text-slate-900 py-2 px-4 text-center text-xs font-bold tracking-wider uppercase relative z-[60]">
         ⚠️ Draft Staging Site — For Review Purposes Only
     </div>
+    <script>
+        if (window.location.hostname.includes('github.io')) {
+            document.getElementById('staging-banner').classList.remove('hidden');
+        }
+    </script>
     
     <!-- Header Navigation -->
     <header class="sticky top-0 z-50 w-full glass shadow-sm transition-all duration-300">
