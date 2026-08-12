@@ -116,6 +116,13 @@
                 </div>
 
                 <div class="flex items-center gap-4">
+                    <!-- Discreet CODATA Link -->
+                    <a href="https://codata.org" target="_blank" rel="noopener noreferrer" 
+                       class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-theme-surface/70 border border-theme-text/10 hover:border-theme-accent/40 transition-all opacity-85 hover:opacity-100 group shadow-sm"
+                       title="Visit CODATA Official Website">
+                        <img src="/assets/images/codata-logo.svg" alt="CODATA Logo" class="h-4.5 w-auto">
+                    </a>
+
                     <!-- Light/Dark Toggle -->
                     <button @click="theme = (theme === 'light' ? 'dark' : 'light')" 
                             class="p-2 rounded-full hover:bg-theme-surface transition-colors focus:outline-none border border-theme-text/10"
