@@ -1,8 +1,8 @@
 name: Build Production Release Branch
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
