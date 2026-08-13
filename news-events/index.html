@@ -62,10 +62,10 @@
     </div>
     <!-- Temporary Draft Review Banner (only displayed on github.io domain) -->
     <div id="staging-banner" class="hidden bg-amber-500 text-slate-900 py-2 px-4 text-center text-xs font-bold tracking-wider uppercase relative z-[60]">
-        ⚠️ Draft Staging Site — For Review Purposes Only
+        ⚠️ Staging Site ⚠️
     </div>
     <script>
-        if (window.location.hostname.includes('github.io')) {
+        if (window.location.hostname.includes('github.io') || window.location.hostname.includes('localhost')) {
             document.getElementById('staging-banner').classList.remove('hidden');
         }
     </script>
@@ -183,7 +183,7 @@
         <div class="max-w-3xl mb-16">
             <h1 class="text-4xl font-bold tracking-tight text-theme-text sm:text-5xl mb-6">Latest News &amp; Events</h1>
             <p class="text-xl text-theme-muted leading-relaxed">
-                Stay updated with announcements, workshops, and publications from the DRUM Task Group.
+                Stay updated with announcements, conference presentations, and publications from the DRUM Task Group.
             </p>
         </div>
 

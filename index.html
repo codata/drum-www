@@ -62,10 +62,10 @@
     </div>
     <!-- Temporary Draft Review Banner (only displayed on github.io domain) -->
     <div id="staging-banner" class="hidden bg-amber-500 text-slate-900 py-2 px-4 text-center text-xs font-bold tracking-wider uppercase relative z-[60]">
-        ⚠️ Draft Staging Site — For Review Purposes Only
+        ⚠️ Staging Site ⚠️
     </div>
     <script>
-        if (window.location.hostname.includes('github.io')) {
+        if (window.location.hostname.includes('github.io') || window.location.hostname.includes('localhost')) {
             document.getElementById('staging-banner').classList.remove('hidden');
         }
     </script>
@@ -396,8 +396,8 @@
 <h3>Key Mission Objectives</h3>
 <ul>
 <li><strong>Enable Cross-Domain Interoperability:</strong> Address the lack of clear, digital definitions for units in global data exchange, facilitating automated cross-disciplinary data integration.</li>
-<li><strong>Bridge Digital Metrology:</strong> Align standard physical metrological systems (such as the BIPM's Digital SI framework) with digital schemas and ontologies (such as QUDT and UCUM).</li>
-<li><strong>Power AI &amp; Machine Intelligence:</strong> Fuel scientific AI models,LLMs, and agents with unambiguous, semantic unit data that prevents calculation failures and enables automated reasoning.</li>
+<li><strong>Bridge Digital Metrology:</strong> Align physical metrological frameworks with digital schemas, codes, and ontologies.</li>
+<li><strong>Power AI &amp; Machine Intelligence:</strong> Fuel AI systems, models, and agents with unambiguous, semantic unit data that prevents calculation failures and enables automated reasoning.</li>
 <li><strong>Equip Scientific Communities:</strong> Empower scientific unions, publishers, and infrastructure organizations to integrate machine-actionable unit definitions directly into their databases, tools, and publications.</li>
 </ul>
 
@@ -436,10 +436,10 @@
                             <p>DRUM acts as a vital bridge between scientific unions, standards bodies, metrologists, and software developers. We address the complexity of digital unit representation by coordinating community efforts and advocating for standardized solutions.</p>
 <h3>What the Group Does</h3>
 <ul>
+<li><strong>Expert Collaboration &amp; Outreach:</strong> We bring together experts from metrology and technology within our working group, and actively participate in international, scientific, and data conferences to present on digital units and quantities.</li>
+<li><strong>Advocacy &amp; Action:</strong> We champion global policy and awareness campaigns, working alongside scientific publishers, data repositories, and international standards bodies to ensure units of measurement are fully machine-actionable and interoperable.</li>
+<li><strong>Standards, APIs &amp; Toolkits:</strong> We develop and promote open tools, digital APIs, and semantic standards to enable machine actionability and seamless data exchange.</li>
 <li><strong>The DRUM Ambassadors Program:</strong> We collaborate with a network of Ambassadors nominated by International Scientific Unions to audit scientific datasets for digital interoperability and AI-readiness.</li>
-<li><strong>Advocacy &amp; Action:</strong> In 2022, DRUM published a landmark comment in <em>Nature</em> titled <strong>&quot;Stop squandering data: make units of measurement machine-readable&quot;</strong>, pointing out how non-standardized units block automated AI ingestion and waste scientific progress.</li>
-<li><strong>Semantic Inventories &amp; Toolkits:</strong> We maintain the Digital Unit Representation Inventory to index systems, and support semantic tools like UMIS and the SI Reference Point that act as translation engines for both humans and machine agents.</li>
-<li><strong>Building Consensus:</strong> We host workshops, webinars, and sessions at international conferences (SciDataCon, IDW) to build unified, machine-resolvable unit standards.</li>
 </ul>
 
                         </div>
@@ -519,9 +519,9 @@
                                     prose-ul:bg-theme-surface prose-ul:rounded-[var(--radius-theme)] prose-ul:p-6 prose-ul:shadow-sm prose-ul:border prose-ul:border-theme-text/5">
                             <p>To enable both human researchers and automated machine learning systems to seamlessly process physical quantities, DRUM indexes semantic registries and supports APIs that validate and align unit definitions.</p>
 <ul>
-<li><strong>Digital Unit Representation Inventory:</strong> A registry of digital systems, serving as a training source and lookup directory for machine intelligence.</li>
-<li><strong>Semantic Translation Services:</strong> Explore the Units of Measurement Interoperability Service (UMIS) and the SI Reference Point prototypes designed for machine resolution.</li>
-<li><strong>Open Access Publications:</strong> Access the 2022 Nature comment and other publications outlining the transition to machine-actionable metrology.</li>
+<li><strong>APIs &amp; Data Services:</strong> Access the Fundamental Physical Constants API and knowledge base designed for AI systems and data science workflows.</li>
+<li><strong>Digital Standards &amp; Toolkits:</strong> Explore the SI Reference Point and key semantic unit ontologies including QUDT and UCUM.</li>
+<li><strong>Publications &amp; Guides:</strong> Consult the CODATA-DRUM implementation guide and landmark publications on machine-actionable metrology.</li>
 </ul>
 <div class="mt-8">
     <a href="/resources/" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-[var(--radius-theme)] shadow-premium !text-theme-accent-fg bg-theme-accent hover:bg-theme-accent/90 transition-all duration-300">
