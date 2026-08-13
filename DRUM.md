@@ -3,12 +3,14 @@
 This document aggregates the requirements, brand specifications, content structures, and source metadata for the **CODATA Digital Representation of Units of Measurement (DRUM)** website.
 
 ## 🎯 Objectives
+
 - **Aesthetic Overhaul:** Transition from CDIF's theme to a darker, premium, blackish/charcoal theme that aligns with the official DRUM logo.
 - **Unified Directory:** Model all members in a single flat list (with role demarcations like Chair, Secretary, Member, and Past Member) since DRUM does not utilize subgroups.
-- **Prominent Resource Anchors:** Replace the external landscape directory with a local **Tools & Resources** page and home page section highlighting the *Digital Unit Representation Inventory*, *SI Reference Point*, *UMIS*, and *Nature Comment Paper*.
+- **Prominent Resource Anchors:** Replace the external landscape directory with a local **Tools & Resources** page and home page section highlighting the _Digital Unit Representation Inventory_, _SI Reference Point_, _UMIS_, and _Nature Comment Paper_.
 - **Companion Links:** Integrate the draft DRUM book (`https://codata.github.io/drum-book/`) prominently within the Hero card.
 
 ## 🔗 Key External References
+
 1. **Nature Commentary:** [Stop Squandering Data](https://www.nature.com/articles/d41586-022-01233-w)
 2. **Technical Book:** [CODATA-DRUM Draft Book](https://codata.github.io/drum-book/)
 3. **Contact Email:** `drum@codata.org`
@@ -19,28 +21,28 @@ This document aggregates the requirements, brand specifications, content structu
 
 The following list is seeded into the site registry:
 
-| Role | Name | Affiliation |
-| :--- | :--- | :--- |
-| **Chair** | Jeremy Frey | University of Southampton |
-| **Secretary** | Stuart Chalk | University of North Florida |
-| **Member** | Aileen Day | University of Southampton |
-| **Member** | Cyrus Walther | International Association of Physics Students |
-| **Member** | Gyorgy Gyomai | OECD |
-| **Member** | Jan Martin Keil | German Aerospace Center |
-| **Member** | Lars Bärring | Lund University |
-| **Member** | Maximilian Gruber | Physikalisch-Technische Bundesanstalt |
-| **Member** | Michael Ward | Elsevier |
-| **Member** | Pascal Heus | CODATA / Freelance |
-| **Member** | Steven Emmerson | Retired, NSF Unidata Program Center |
-| **Member** | Toshihiro Ashino | Association for Computing Machinery |
-| **Member** | Richard Brown | National Physical Laboratory (NPL) |
-| **Member** | Richard Hartshorn | University of Canterbury |
-| **Member** | Simon Hodson | CODATA |
-| **Member** | Sirko Schindler | German Aerospace Center |
-| **Past** | Robert J. Hanisch | NIST |
-| **Past** | Simon Cox | *Unspecified / Verify* |
-| **Past** | Joachim Meier | Physikalisch-Technische Bundesanstalt |
-| **Past** | Janet Miles | *Unspecified / Verify* |
+| Role          | Name              | Affiliation                                   |
+| :------------ | :---------------- | :-------------------------------------------- |
+| **Chair**     | Jeremy Frey       | University of Southampton                     |
+| **Secretary** | Stuart Chalk      | University of North Florida                   |
+| **Member**    | Aileen Day        | University of Southampton                     |
+| **Member**    | Cyrus Walther     | International Association of Physics Students |
+| **Member**    | Gyorgy Gyomai     | OECD                                          |
+| **Member**    | Jan Martin Keil   | German Aerospace Center                       |
+| **Member**    | Lars Bärring      | Lund University                               |
+| **Member**    | Maximilian Gruber | Physikalisch-Technische Bundesanstalt         |
+| **Member**    | Michael Ward      | Elsevier                                      |
+| **Member**    | Pascal Heus       | CODATA / Freelance                            |
+| **Member**    | Steven Emmerson   | Retired, NSF Unidata Program Center           |
+| **Member**    | Toshihiro Ashino  | Association for Computing Machinery           |
+| **Member**    | Richard Brown     | National Physical Laboratory (NPL)            |
+| **Member**    | Richard Hartshorn | University of Canterbury                      |
+| **Member**    | Simon Hodson      | CODATA                                        |
+| **Member**    | Sirko Schindler   | German Aerospace Center                       |
+| **Past**      | Robert J. Hanisch | NIST                                          |
+| **Past**      | Simon Cox         | _Unspecified / Verify_                        |
+| **Past**      | Joachim Meier     | Physikalisch-Technische Bundesanstalt         |
+| **Past**      | Janet Miles       | _Unspecified / Verify_                        |
 
 ---
 

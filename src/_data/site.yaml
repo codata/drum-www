@@ -23,7 +23,7 @@ pages:
     lead: Explore inventories, standards registries, and reference materials designed to make units accessible to humans, machines, and AI systems alike.
   news:
     title: Latest News & Events
-    lead: Stay updated with announcements, workshops, and publications from the DRUM Task Group.
+    lead: Stay updated with announcements, conference presentations, and publications from the DRUM Task Group.
 footer:
   description: The CODATA Digital Representation of Units of Measurement (DRUM) Task Group works to build the foundation for AI-ready data, enabling machine intelligence and global scientific communities to seamlessly parse and compute standardized units.
   attribution: A <a href='https://codata.org' target='_blank' class='text-theme-accent hover:underline underline-offset-4 pointer-events-auto'>CODATA</a> Task Group.

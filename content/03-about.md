@@ -8,7 +8,7 @@ DRUM acts as a vital bridge between scientific unions, standards bodies, metrolo
 
 ### What the Group Does
 
-*   **The DRUM Ambassadors Program:** We collaborate with a network of Ambassadors nominated by International Scientific Unions to audit scientific datasets for digital interoperability and AI-readiness.
-*   **Advocacy & Action:** In 2022, DRUM published a landmark comment in *Nature* titled **"Stop squandering data: make units of measurement machine-readable"**, pointing out how non-standardized units block automated AI ingestion and waste scientific progress.
-*   **Semantic Inventories & Toolkits:** We maintain the Digital Unit Representation Inventory to index systems, and support semantic tools like UMIS and the SI Reference Point that act as translation engines for both humans and machine agents.
-*   **Building Consensus:** We host workshops, webinars, and sessions at international conferences (SciDataCon, IDW) to build unified, machine-resolvable unit standards.
+- **Expert Collaboration & Outreach:** We bring together experts from metrology and technology within our working group, and actively participate in international, scientific, and data conferences to present on digital units and quantities.
+- **Advocacy & Action:** We champion global policy and awareness campaigns, working alongside scientific publishers, data repositories, and international standards bodies to ensure units of measurement are fully machine-actionable and interoperable.
+- **Standards, APIs & Toolkits:** We develop and promote open tools, digital APIs, and semantic standards to enable machine actionability and seamless data exchange.
+- **The DRUM Ambassadors Program:** We collaborate with a network of Ambassadors nominated by International Scientific Unions to audit scientific datasets for digital interoperability and AI-readiness.

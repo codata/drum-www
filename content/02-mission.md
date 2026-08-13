@@ -11,6 +11,6 @@ To ensure data is truly FAIR (Findable, Accessible, Interoperable, and Reusable)
 ### Key Mission Objectives
 
 - **Enable Cross-Domain Interoperability:** Address the lack of clear, digital definitions for units in global data exchange, facilitating automated cross-disciplinary data integration.
-- **Bridge Digital Metrology:** Align standard physical metrological systems (such as the BIPM's Digital SI framework) with digital schemas and ontologies (such as QUDT and UCUM).
-- **Power AI & Machine Intelligence:** Fuel scientific AI models,LLMs, and agents with unambiguous, semantic unit data that prevents calculation failures and enables automated reasoning.
+- **Bridge Digital Metrology:** Align physical metrological frameworks with digital schemas, codes, and ontologies.
+- **Power AI & Machine Intelligence:** Fuel AI systems, models, and agents with unambiguous, semantic unit data that prevents calculation failures and enables automated reasoning.
 - **Equip Scientific Communities:** Empower scientific unions, publishers, and infrastructure organizations to integrate machine-actionable unit definitions directly into their databases, tools, and publications.
