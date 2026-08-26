@@ -1,3 +1,16 @@
+- id: si-reference-point-v1-webinar
+  date: "2026-07-31"
+  type: event
+  title: "Recording Available: Introducing the SI Reference Point (SIRP)"
+  summary: Watch the recording of the CIPM FORUM-MD and BIPM webinar introducing the SI Reference Point (SIRP), exploring how it provides a machine-actionable knowledge model of the SI Brochure for digital metrology.
+  link: https://www.bipm.org/en/-/recording-available-now-introducing-the-si-reference-point-sirp-
+  tags:
+    - BIPM
+    - SI
+    - webinar
+    - SIRP
+    - interoperability
+
 - id: si-reference-point-v1
   date: "2026-06-18"
   type: announcement
