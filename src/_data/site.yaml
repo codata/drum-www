@@ -1,6 +1,8 @@
 name: DRUM
 fullName: Digital Representation of Units of Measurement
 tagline: Enabling AI-ready data and machine-actionable science by standardizing digital units of measurement across global communities.
+contactEmail: drum@codata.org
+contactUrl: mailto:drum@codata.org
 hero:
   badge: CODATA Task Group
   bookCard:
@@ -27,6 +29,8 @@ pages:
 footer:
   description: The CODATA Digital Representation of Units of Measurement (DRUM) Task Group works to build the foundation for AI-ready data, enabling machine intelligence and global scientific communities to seamlessly parse and compute standardized units.
   attribution: A <a href='https://codata.org' target='_blank' class='text-theme-accent hover:underline underline-offset-4 pointer-events-auto'>CODATA</a> Task Group.
+  contact: drum@codata.org
+  contactUrl: mailto:drum@codata.org
   links:
     framework:
       - text: Membership
@@ -35,6 +39,8 @@ footer:
         url: /resources/
       - text: News & Events
         url: /news-events/
+      - text: Contact Us
+        url: mailto:drum@codata.org
     resources:
       - text: The DRUM Book
         url: https://codata.github.io/drum-book/
@@ -45,4 +51,9 @@ footer:
       - text: CODATA Website
         url: https://codata.org/initiatives/task-groups/drum/
         external: true
+  legal:
+    - text: Privacy Policy
+      url: /privacy/
+    - text: Terms of Service
+      url: /terms/
   copyright: "&copy; 2026 <a href='https://codata.org' target='_blank' class='hover:text-theme-accent transition-colors'>CODATA</a>. All rights reserved."
