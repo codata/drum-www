@@ -39,6 +39,7 @@
         "@type": "Organization",
         "name": "CODATA",
         "url": "https://codata.org",
+        "email": "drum@codata.org",
         "logo": {
           "@type": "ImageObject",
           "url": "https://codata.org/wp-content/uploads/2020/09/CODATA-DRUM-Logo.png"
@@ -800,7 +801,14 @@ function resourcesFilter() {
                 <div class="col-span-1 md:col-span-2">
                     <img class="h-12 w-auto mb-6 opacity-90 hover:opacity-100 transition-opacity" src="/assets/images/codata-logo.svg" alt="CODATA Logo">
                     <p class="text-sm text-theme-muted max-w-sm leading-relaxed mb-4">The CODATA Digital Representation of Units of Measurement (DRUM) Task Group works to build the foundation for AI-ready data, enabling machine intelligence and global scientific communities to seamlessly parse and compute standardized units.</p>
-                    <p class="text-sm font-semibold text-theme-text opacity-90">A <a href='https://codata.org' target='_blank' class='text-theme-accent hover:underline underline-offset-4 pointer-events-auto'>CODATA</a> Task Group.</p>
+                    <p class="text-sm font-semibold text-theme-text opacity-90 mb-3">A <a href='https://codata.org' target='_blank' class='text-theme-accent hover:underline underline-offset-4 pointer-events-auto'>CODATA</a> Task Group.</p>
+                    <div class="flex items-center gap-2 text-sm text-theme-muted">
+                        <svg class="w-4 h-4 text-theme-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span>Contact:</span>
+                        <a href="mailto:drum@codata.org" class="text-theme-accent hover:underline font-medium">drum@codata.org</a>
+                    </div>
                 </div>
                 <div>
                     <h3 class="text-sm font-semibold uppercase tracking-wider text-theme-text opacity-70">Task Group</h3>
@@ -811,6 +819,8 @@ function resourcesFilter() {
                         <li><a href="/resources/" class="text-sm text-theme-muted hover:text-theme-accent transition-colors">Tools &amp; Resources</a></li>
                         
                         <li><a href="/news-events/" class="text-sm text-theme-muted hover:text-theme-accent transition-colors">News &amp; Events</a></li>
+                        
+                        <li><a href="mailto:drum@codata.org" class="text-sm text-theme-muted hover:text-theme-accent transition-colors">Contact Us</a></li>
                         
                     </ul>
                 </div>
@@ -827,8 +837,16 @@ function resourcesFilter() {
                     </ul>
                 </div>
             </div>
-            <div class="mt-12 border-t border-theme-text/10 pt-8 flex justify-between items-center">
+            <div class="mt-12 border-t border-theme-text/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <p class="text-sm text-theme-muted">&copy; 2026 <a href='https://codata.org' target='_blank' class='hover:text-theme-accent transition-colors'>CODATA</a>. All rights reserved.</p>
+                <div class="flex flex-wrap items-center gap-6 text-sm text-theme-muted">
+                    
+                    <a href="/privacy/" class="hover:text-theme-accent transition-colors">Privacy Policy</a>
+                    
+                    <a href="/terms/" class="hover:text-theme-accent transition-colors">Terms of Service</a>
+                    
+                    <a href="mailto:drum@codata.org" class="hover:text-theme-accent transition-colors">drum@codata.org</a>
+                </div>
             </div>
         </div>
     </footer>
