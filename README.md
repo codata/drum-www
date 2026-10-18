@@ -22,8 +22,8 @@ Designed for speed, accessibility, and modern aesthetics:
 ## 🚀 Getting Started for Developers
 
 ### Prerequisites
-- Node.js (v20+)
-- `pnpm` (recommended) or `npm`
+- Node.js (v22+)
+- `pnpm` (v11+)
 
 ### Installation & Local Development
 
