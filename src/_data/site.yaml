@@ -20,6 +20,15 @@ pages:
       cta: Join the Group
       formUrl: https://forms.gle/4TjFBqaNoigK97BJ6
       email: mailto:drum@codata.org
+  ambassadors:
+    title: DRUM Ambassador Program
+    lead: Bridging international scientific unions, metrology institutions, and domain communities to promote digital representation and standardization of units of measurement worldwide.
+    join:
+      title: Join the Program
+      description: We welcome representatives from International Scientific Unions, standard bodies, and research organizations to champion FAIR units in their disciplines.
+      cta: Apply or Nominate
+      formUrl: https://forms.gle/4TjFBqaNoigK97BJ6
+      email: mailto:drum@codata.org?subject=DRUM%20Ambassador%20Inquiry
   resources:
     title: Tools & Resources
     lead: Explore inventories, standards registries, and reference materials designed to make units accessible to humans, machines, and AI systems alike.
@@ -35,6 +44,8 @@ footer:
     framework:
       - text: Membership
         url: /membership/
+      - text: Ambassadors
+        url: /ambassadors/
       - text: Tools & Resources
         url: /resources/
       - text: News & Events

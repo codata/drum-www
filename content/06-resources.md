@@ -1,7 +1,7 @@
 ---
 title: Tools & Resources
 nav_title: Resources
-order: 5
+order: 6
 ---
 
 To enable both human researchers and automated machine learning systems to seamlessly process physical quantities, DRUM indexes semantic registries and supports APIs that validate and align unit definitions.

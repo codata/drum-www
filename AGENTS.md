@@ -24,6 +24,7 @@ The site uses a Tailwind CSS v4 `@theme` architecture. The color system is tailo
 
 - `site.yaml`: Global UI labels, taglines, email links (`mailto:drum@codata.org`), and footer links.
 - `members.yaml`: Flat list of seeded task group members (Chair, Secretary, Active Members, Past Members). No subgroups are modeled.
+- `ambassadors.yaml`: Catalog of international scientific unions, research institutions, and stakeholders participating in the DRUM Ambassador Program, including program charter (roles, profiles, benefits) and organization metadata (acronym, name, ROR URI, website, and representative placeholders).
 - `resources.yaml`: Catalogs key toolkits, inventories, and articles (Digital Unit Representation Inventory, UMIS, SI Reference Point, and the Nature commentary).
 - `news.yaml` & `sortedNews.js`: YAML structure driven news events and ticker updates.
 - `meetings.yaml`: Seeded list of timezone-aware task group meetings.
@@ -32,6 +33,7 @@ The site uses a Tailwind CSS v4 `@theme` architecture. The color system is tailo
 
 - `/` (Home): Compiled from `index.njk` and sequential homepage markdown sections in the `content/` directory.
 - `/membership/` (`membership.njk`): Unified flat membership catalog.
+- `/ambassadors/` (`ambassadors.njk`): DRUM Ambassador Program overview, program pillars (Role, Profile, Benefits), and interactive scientific union directory.
 - `/resources/` (`resources.njk`): Core tool and document registry.
 - `/news-events/` (`news-events.njk`): Full archive of news and ticker announcements.
 - `/privacy/` & `/terms/` (`privacy.md`, `terms.md`): Legal compliance.
@@ -42,7 +44,8 @@ The site uses a Tailwind CSS v4 `@theme` architecture. The color system is tailo
 - `02-mission.md`: The mission of the DRUM group.
 - `03-about.md`: Detailed explanation of what the group is about.
 - `04-membership.md`: Teaser for membership with meeting frequencies and links to the membership page.
-- `05-resources.md`: Teaser for core tools, linking to the resources page.
+- `05-ambassadors.md`: Teaser for the DRUM Ambassador Program, linking to the ambassadors page.
+- `06-resources.md`: Teaser for core tools, linking to the resources page.
 
 ## 🛠️ Technical Stack
 
