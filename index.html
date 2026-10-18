@@ -108,6 +108,12 @@
                             
                         
                             
+                            <a href="/#ambassadors" class="text-theme-muted hover:text-theme-accent transition-colors duration-200 px-3 py-2 text-sm font-semibold tracking-tight uppercase">
+                                Ambassadors
+                            </a>
+                            
+                        
+                            
                             <a href="/#resources" class="text-theme-muted hover:text-theme-accent transition-colors duration-200 px-3 py-2 text-sm font-semibold tracking-tight uppercase">
                                 Resources
                             </a>
@@ -166,6 +172,10 @@
                 
                     
                     <a href="/#membership" @click="menuOpen = false" class="block rounded-md px-3 py-2 text-base font-semibold tracking-tight uppercase hover:bg-theme-accent hover:text-white">Membership</a>
+                    
+                
+                    
+                    <a href="/#ambassadors" @click="menuOpen = false" class="block rounded-md px-3 py-2 text-base font-semibold tracking-tight uppercase hover:bg-theme-accent hover:text-white">Ambassadors</a>
                     
                 
                     
@@ -496,9 +506,12 @@
 <li><strong>Diverse Expertise:</strong> Our members represent academic institutions, national metrology institutes, and international scientific organizations.</li>
 <li><strong>Regular Rhythm:</strong> Meetings are held every couple of weeks, rotating across three regional time zones (Europe/Africa/West Asia, Americas, and East Asia/Oceania/Pacific) to ensure global participation.</li>
 </ul>
-<div class="mt-8">
+<div class="mt-8 flex flex-wrap gap-4">
     <a href="/membership/" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-[var(--radius-theme)] shadow-premium !text-theme-accent-fg bg-theme-accent hover:bg-theme-accent/90 transition-all duration-300">
         Membership Information
+    </a>
+    <a href="/ambassadors/" class="inline-flex items-center px-8 py-3 border border-theme-text/20 text-base font-bold rounded-[var(--radius-theme)] text-theme-text hover:bg-theme-surface transition-all duration-300">
+        Ambassador Program
     </a>
 </div>
 
@@ -512,7 +525,51 @@
 
     
         <!-- STANDARD SECTION -->
-        <section id="resources" class="py-12 lg:py-16 relative scroll-mt-24 ">
+        <section id="ambassadors" class="py-12 lg:py-16 relative scroll-mt-24 ">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+                    
+                    <!-- Section Title Sidebar -->
+                    <div class="lg:w-1/3 lg:sticky lg:top-32 pt-2">
+                        <h2 class="text-3xl md:text-4xl lg:text-4xl font-bold mb-4 text-theme-text leading-tight tracking-tight">
+                            DRUM Ambassador Program
+                        </h2>
+                        <div class="h-1.5 w-16 bg-theme-accent rounded-full opacity-80"></div>
+                    </div>
+                    
+                    <!-- Content Area -->
+                    <div class="lg:w-2/3 w-full">
+                        <div class="prose prose-lg md:prose-xl max-w-none 
+                                    text-theme-text/90 
+                                    prose-a:text-theme-accent prose-a:font-semibold prose-a:no-underline prose-a:hover:underline prose-a:underline-offset-4
+                                    prose-headings:text-theme-text prose-headings:font-bold prose-headings:tracking-tight
+                                    prose-strong:text-theme-text prose-strong:font-bold
+                                    prose-li:text-theme-text/90 prose-li:marker:text-theme-accent
+                                    prose-p:leading-relaxed prose-p:mb-6 prose-p:text-inherit
+                                    prose-ul:bg-theme-surface prose-ul:rounded-[var(--radius-theme)] prose-ul:p-6 prose-ul:shadow-sm prose-ul:border prose-ul:border-theme-text/5">
+                            <p>The DRUM Ambassador Program connects international scientific unions, metrology bodies, and domain communities to champion the digital representation and standardization of units of measurement across global science.</p>
+<ul>
+<li><strong>Scientific Union Representation:</strong> 28 international scientific unions and organizations collaborate to identify metrology challenges and domain-specific use cases.</li>
+<li><strong>Cross-Domain Interoperability:</strong> Ambassadors maintain active communication with DRUM and the Cross Domain Interoperability Framework (CDIF) metrology and technology experts.</li>
+<li><strong>Advocacy &amp; Collaboration:</strong> Empowering disciplinary leaders to shape machine-actionable digital unit tools, databases, APIs, and models.</li>
+</ul>
+<div class="mt-8 flex flex-wrap gap-4">
+    <a href="/ambassadors/" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-bold rounded-[var(--radius-theme)] shadow-premium !text-theme-accent-fg bg-theme-accent hover:bg-theme-accent/90 transition-all duration-300">
+        Explore Ambassador Program
+    </a>
+</div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    
+
+    
+        <!-- STANDARD SECTION -->
+        <section id="resources" class="py-12 lg:py-16 relative scroll-mt-24 bg-theme-surface/50">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
                     
@@ -578,6 +635,8 @@
                     <ul class="mt-4 space-y-2">
                         
                         <li><a href="/membership/" class="text-sm text-theme-muted hover:text-theme-accent transition-colors">Membership</a></li>
+                        
+                        <li><a href="/ambassadors/" class="text-sm text-theme-muted hover:text-theme-accent transition-colors">Ambassadors</a></li>
                         
                         <li><a href="/resources/" class="text-sm text-theme-muted hover:text-theme-accent transition-colors">Tools &amp; Resources</a></li>
                         
