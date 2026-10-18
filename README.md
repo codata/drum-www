@@ -23,7 +23,7 @@ Designed for speed, accessibility, and modern aesthetics:
 
 ### Prerequisites
 - Node.js (v20+)
-- `npm` or `pnpm`
+- `pnpm` (recommended) or `npm`
 
 ### Installation & Local Development
 
@@ -35,18 +35,18 @@ Designed for speed, accessibility, and modern aesthetics:
 
 2. **Install dependencies:**
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Start the development server:**
    ```bash
-   npm start
+   pnpm start
    ```
    The local site will be served at `http://localhost:8080/drum-www/` with full Hot Module Replacement (HMR) for both styles and templates.
 
 4. **Build for production:**
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 ---
@@ -56,7 +56,7 @@ Designed for speed, accessibility, and modern aesthetics:
 ```bash
 ├── content/              # Sequential Markdown files for Homepage sections
 ├── src/
-│   ├── _data/            # Structured YAML data (News, Members, Resources, etc.)
+│   ├── _data/            # Structured YAML data (News, Members, Ambassadors, etc.)
 │   ├── _includes/        # Layouts (Nunjucks) and templates
 │   ├── assets/
 │   │   ├── images/       # DRUM logo assets
@@ -77,7 +77,8 @@ The site is built to make it easy to keep content up-to-date by separating site 
 | Content Area | File Path | Format |
 | :--- | :--- | :--- |
 | **Global Titles & UI Texts** | `src/_data/site.yaml` | YAML |
-| **Members List** | `src/_data/members.yaml` | YAML |
+| **Task Group Members** | `src/_data/members.yaml` | YAML |
+| **Ambassadors & Unions** | `src/_data/ambassadors.yaml` | YAML |
 | **Resources & Tools Registry** | `src/_data/resources.yaml` | YAML |
 | **News & Announcements** | `src/_data/news.yaml` | YAML |
 | **Upcoming Meetings** | `src/_data/meetings.yaml` | YAML |

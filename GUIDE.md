@@ -18,6 +18,7 @@ The website is built so that almost every piece of text is stored in simple **Ma
 | **Change page titles/intro lead text** | `src/_data/site.yaml` | YAML |
 | **Update News & Events** | `src/_data/news.yaml` | YAML |
 | **Manage Task Group Membership** | `src/_data/members.yaml` | YAML |
+| **Manage Ambassadors & Unions** | `src/_data/ambassadors.yaml` | YAML |
 | **Add/Edit Tools & Resources** | `src/_data/resources.yaml` | YAML |
 | **Manage Scheduled Meetings** | `src/_data/meetings.yaml` | YAML |
 | **Home Page Narrative Content** | `content/` folder | Markdown |
