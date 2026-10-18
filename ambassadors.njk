@@ -25,11 +25,13 @@ permalink: /ambassadors/
         {% if item.logo %}
         "logo": "{{ item.logo }}",
         {% endif %}
-        {% if item.domain %}
+        {% if item.classifier %}
+        "knowsAbout": "{{ item.classifier | escape }}",
+        {% elif item.domain %}
         "knowsAbout": "{{ item.domain | escape }}",
         {% endif %}
         {% if item.ror %}
-        "sameAs": "{{ item.ror }}"
+        "sameAs": "https://ror.org/{{ item.ror | replace('https://ror.org/', '') }}",
         {% endif %}
       }{{ "," if not loop.last }}
       {% endfor %}
@@ -202,7 +204,7 @@ permalink: /ambassadors/
                         Participating Scientific Unions &amp; Organizations
                     </h2>
                     <p class="text-sm text-theme-muted max-w-2xl">
-                        Explore the international unions and bodies engaged in the DRUM Ambassador Program. Search by acronym, union name, or filter by scientific domain.
+                        Explore the international unions and bodies engaged in the DRUM Ambassador Program. Search by acronym, union name, or filter by scientific field.
                     </p>
                 </div>
                 
@@ -214,7 +216,7 @@ permalink: /ambassadors/
                 </div>
             </div>
 
-            <!-- Search & Domain Filter Bar -->
+            <!-- Search & Field Filter Bar -->
             <div class="p-4 sm:p-6 bg-theme-surface/70 backdrop-blur-md rounded-2xl border border-theme-text/10 mb-10 shadow-sm space-y-4">
                 <div class="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
                     <!-- Search Input -->
@@ -238,14 +240,14 @@ permalink: /ambassadors/
                         </button>
                     </div>
 
-                    <!-- Filter by Domain Dropdown -->
+                    <!-- Filter by UNESCO Classifier / Field Dropdown -->
                     <div class="flex-shrink-0 md:w-72">
                         <div class="relative">
-                            <select x-model="selectedDomain"
+                            <select x-model="selectedClassifier"
                                     class="w-full pl-3.5 pr-9 py-2.5 text-sm rounded-xl bg-theme-surface border border-theme-text/15 text-theme-text font-medium focus:outline-none focus:ring-2 focus:ring-theme-accent focus:border-transparent transition-all shadow-inner appearance-none cursor-pointer">
-                                <option value="">All Scientific Domains</option>
-                                <template x-for="d in domains" :key="d">
-                                    <option :value="d" x-text="d"></option>
+                                <option value="">All Scientific Fields</option>
+                                <template x-for="c in classifiers" :key="c">
+                                    <option :value="c" x-text="c"></option>
                                 </template>
                             </select>
                             <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-theme-muted">
@@ -258,12 +260,12 @@ permalink: /ambassadors/
                 </div>
 
                 <!-- Active Filter Tags (visible when filter or search is applied) -->
-                <div x-show="selectedDomain || searchQuery" class="flex flex-wrap items-center gap-2 pt-2 border-t border-theme-text/5 text-xs">
+                <div x-show="selectedClassifier || searchQuery" class="flex flex-wrap items-center gap-2 pt-2 border-t border-theme-text/5 text-xs">
                     <span class="text-theme-muted font-medium">Active filters:</span>
-                    <template x-if="selectedDomain">
+                    <template x-if="selectedClassifier">
                         <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-theme-accent/10 border border-theme-accent/20 text-theme-accent font-semibold">
-                            <span>Domain: <strong x-text="selectedDomain"></strong></span>
-                            <button @click="selectedDomain = ''" class="hover:text-red-500 cursor-pointer ml-1" title="Clear domain filter">&times;</button>
+                            <span>Field: <strong x-text="selectedClassifier"></strong></span>
+                            <button @click="selectedClassifier = ''" class="hover:text-red-500 cursor-pointer ml-1" title="Clear field filter">&times;</button>
                         </span>
                     </template>
                     <template x-if="searchQuery">
@@ -300,11 +302,11 @@ permalink: /ambassadors/
                                     <span class="px-3 py-1 bg-theme-accent/10 border border-theme-accent/20 text-theme-accent rounded-lg text-sm font-extrabold tracking-wide uppercase font-mono shadow-sm" x-text="member.id"></span>
                                 </div>
                                 
-                                <template x-if="member.domain">
-                                    <button @click="selectedDomain = member.domain"
+                                <template x-if="member.classifier || member.domain">
+                                    <button @click="selectedClassifier = (member.classifier || member.domain)"
                                             class="text-[11px] font-semibold tracking-wide px-2.5 py-1 rounded-full bg-theme-text/5 hover:bg-theme-accent/15 text-theme-muted hover:text-theme-accent border border-theme-text/10 hover:border-theme-accent/30 text-right leading-tight max-w-[60%] transition-colors cursor-pointer"
-                                            :title="'Filter by ' + member.domain"
-                                            x-text="member.domain"></button>
+                                            :title="'Filter by ' + (member.classifier || member.domain)"
+                                            x-text="member.classifier || member.domain"></button>
                                 </template>
                             </div>
 
@@ -329,13 +331,13 @@ permalink: /ambassadors/
 
                                 <!-- ROR Identifier Link (High-contrast emerald for both light and dark themes) -->
                                 <template x-if="member.ror">
-                                    <a :href="member.ror" 
+                                    <a :href="'https://ror.org/' + member.ror.replace('https://ror.org/', '')" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono font-semibold bg-emerald-100 text-emerald-900 border border-emerald-300 hover:border-emerald-500 dark:bg-emerald-950/50 dark:text-emerald-300 dark:border-emerald-500/30 dark:hover:border-emerald-400 transition-all shadow-xs"
                                        title="View Research Organization Registry (ROR) Record">
                                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-700 dark:bg-emerald-400"></span>
-                                        <span x-text="'ror:' + (member.rorId || member.ror.replace('https://ror.org/', ''))"></span>
+                                        <span x-text="'ror:' + member.ror.replace('https://ror.org/', '')"></span>
                                     </a>
                                 </template>
                             </div>
@@ -364,7 +366,7 @@ permalink: /ambassadors/
                     </svg>
                 </div>
                 <h3 class="text-lg font-bold text-theme-text mb-1">No organizations found</h3>
-                <p class="text-sm text-theme-muted mb-6">No organizations match your current search or domain filter.</p>
+                <p class="text-sm text-theme-muted mb-6">No organizations match your current search or field filter.</p>
                 <button @click="resetFilters()" class="px-5 py-2 text-xs font-bold rounded-lg text-theme-accent-fg bg-theme-accent hover:bg-theme-accent/90 transition-all cursor-pointer">
                     Reset Filters
                 </button>
@@ -407,38 +409,39 @@ function ambassadorDirectory() {
     
     return {
         searchQuery: '',
-        selectedDomain: '',
+        selectedClassifier: '',
         members: rawMembers,
         
-        get domains() {
+        get classifiers() {
             const list = this.members
-                .map(m => m.domain)
+                .map(m => m.classifier || m.domain)
                 .filter(Boolean);
             return [...new Set(list)].sort();
         },
         
         resetFilters() {
             this.searchQuery = '';
-            this.selectedDomain = '';
+            this.selectedClassifier = '';
         },
         
         get filteredMembers() {
             let list = this.members;
             
-            // Domain filter
-            if (this.selectedDomain) {
-                list = list.filter(m => m.domain === this.selectedDomain);
+            // Classifier / field filter
+            if (this.selectedClassifier) {
+                list = list.filter(m => (m.classifier || m.domain) === this.selectedClassifier);
             }
             
-            // Search query filter (matches ID/acronym, Name, Domain, Tag, or ROR ID)
+            // Search query filter (matches ID/acronym, Name, Classifier, Domain, Tag, or ROR ID)
             if (this.searchQuery.trim() !== '') {
                 const q = this.searchQuery.toLowerCase().trim();
                 list = list.filter(m => 
                     (m.id && m.id.toLowerCase().includes(q)) ||
                     (m.name && m.name.toLowerCase().includes(q)) ||
+                    (m.classifier && m.classifier.toLowerCase().includes(q)) ||
                     (m.domain && m.domain.toLowerCase().includes(q)) ||
                     (m.tag && Array.isArray(m.tag) && m.tag.some(t => t.toLowerCase().includes(q))) ||
-                    (m.rorId && m.rorId.toLowerCase().includes(q))
+                    (m.ror && m.ror.toLowerCase().includes(q))
                 );
             }
             

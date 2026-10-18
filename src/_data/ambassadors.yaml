@@ -31,311 +31,285 @@ benefits:
     - text: "Have a direct say in the direction and activities of DRUM and CDIF practices and tools."
 
 # Directory of Participating Members & Stakeholders
+# Classifiers follow the top level of the UNESCO nomenclature for fields of science and technology:
+# https://en.wikipedia.org/wiki/UNESCO_nomenclature
 members:
   - id: "4S"
     name: "Society for Social Studies of Science"
-    domain: "Social Studies of Science"
+    classifier: "Sociology"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/003cs9s68"
-    rorId: "003cs9s68"
+    ror: "003cs9s68"
     website: "https://4sonline.org"
     representative: null
 
   - id: "IGU"
     name: "International Geographical Union"
-    domain: "Geography"
+    classifier: "Geography"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/022qvpy75"
-    rorId: "022qvpy75"
+    ror: "022qvpy75"
     website: "https://igu-online.org"
     representative: null
 
   - id: "IMU"
     name: "International Mathematical Union"
-    domain: "Mathematics"
+    classifier: "Mathematics"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/05rg3k287"
-    rorId: "05rg3k287"
+    ror: "05rg3k287"
     website: "https://www.mathunion.org"
     representative: null
 
   - id: "ISA"
     name: "International Sociological Association"
-    domain: "Sociology"
+    classifier: "Sociology"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/05s2em157"
-    rorId: "05s2em157"
+    ror: "05s2em157"
     website: "https://www.isa-sociology.org"
     representative: null
 
   - id: "IUBS"
     name: "International Union of Biological Sciences"
-    domain: "Biological Sciences"
+    classifier: "Life Sciences"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/04h5sdx36"
-    rorId: "04h5sdx36"
+    ror: "04h5sdx36"
     website: "https://iubs.org"
     representative: null
 
   - id: "IUCr"
     name: "International Union of Crystallography"
-    domain: "Crystallography"
+    classifier: "Physics"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/00vdend65"
-    rorId: "00vdend65"
+    ror: "00vdend65"
     website: "https://www.iucr.org"
     representative: null
 
   - id: "IUIS"
     name: "International Union of Immunological Societies"
-    domain: "Immunology"
+    classifier: "Life Sciences"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/01cejnk20"
-    rorId: "01cejnk20"
+    ror: "01cejnk20"
     website: "https://iuis.org"
     representative: null
 
   - id: "IUPAC"
     name: "International Union for Pure and Applied Chemistry"
-    domain: "Chemistry"
+    classifier: "Chemistry"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/03ne2zw20"
-    rorId: "03ne2zw20"
+    ror: "03ne2zw20"
     website: "https://iupac.org"
     representative: null
 
   - id: "IUPAP"
     name: "International Union for Pure and Applied Physics"
-    domain: "Physics"
+    classifier: "Physics"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/01gy1fk68"
-    rorId: "01gy1fk68"
+    ror: "01gy1fk68"
     website: "https://iupap.org"
     representative: null
 
   - id: "IUPESM"
     name: "International Union for Physical and Engineering Sciences in Medicine"
-    domain: "Medical Physics and Biomedical Engineering"
+    classifier: "Medical Sciences"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/04aekkh13"
-    rorId: "04aekkh13"
+    ror: "04aekkh13"
     website: "https://iupesm.org"
     representative: null
 
   - id: "IUPESM-IOMP"
     name: "International Union for Physical and Engineering Sciences in Medicine, IOMP (medical physics)"
-    domain: "Medical Physics"
+    classifier: "Medical Sciences"
     tag:
       - union
     logo: null
     ror: null
-    rorId: null
     website: "https://www.iomp.org"
     representative: null
 
   - id: "IUPESM-IFMBE"
     name: "International Union for Physical and Engineering Sciences in Medicine, IFMBE (biomedical engineers)"
-    domain: "Biomedical Engineering"
+    classifier: "Technological Sciences"
     tag:
       - union
     logo: null
     ror: null
-    rorId: null
     website: "https://ifmbe.org"
     representative: null
 
   - id: "IUPHAR"
     name: "International Union of Basic and Clinical Pharmacology"
-    domain: "Pharmacology"
+    classifier: "Medical Sciences"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/0125syc65"
-    rorId: "0125syc65"
+    ror: "0125syc65"
     website: "https://iuphar.org"
     representative: null
 
   - id: "IUPS"
     name: "International Union of Physiological Sciences"
-    domain: "Physiology"
+    classifier: "Life Sciences"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/0218eta95"
-    rorId: "0218eta95"
+    ror: "0218eta95"
     website: "https://www.iups.org"
     representative: null
 
   - id: "IUPsyS"
     name: "International Union of Psychological Science"
-    domain: "Psychology"
+    classifier: "Psychology"
     tag:
       - union
     logo: null
     ror: null
-    rorId: null
     website: "https://www.iupsys.net"
     representative: null
 
   - id: "IUSSP"
     name: "International Union for the Scientific Study of Population"
-    domain: "Population Studies"
+    classifier: "Demography"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/04htrme26"
-    rorId: "04htrme26"
+    ror: "04htrme26"
     website: "https://iussp.org"
     representative: null
 
   - id: "IUTAM"
     name: "International Union of Theoretical and Applied Mechanics"
-    domain: "Mechanics"
+    classifier: "Physics"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/02azz6x90"
-    rorId: "02azz6x90"
+    ror: "02azz6x90"
     website: "https://iutam.org"
     representative: null
 
   - id: "IUTOX"
     name: "International Union of Toxicology"
-    domain: "Toxicology"
+    classifier: "Medical Sciences"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/03yqtkg69"
-    rorId: "03yqtkg69"
+    ror: "03yqtkg69"
     website: "https://www.iutox.org"
     representative: null
 
   - id: "IUHPST"
     name: "The International Union for History and Philosophy of Science and Technology"
-    domain: "History and Philosophy of Science"
+    classifier: "Philosophy"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/02nnpw434"
-    rorId: "02nnpw434"
+    ror: "02nnpw434"
     website: "https://iuhpst.org"
     representative: null
 
   - id: "IUNS"
     name: "International Union of Nutritional Sciences"
-    domain: "Nutritional Sciences"
+    classifier: "Medical Sciences"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/05f5aj854"
-    rorId: "05f5aj854"
+    ror: "05f5aj854"
     website: "https://iuns.org"
     representative: null
 
   - id: "ISDE"
     name: "International Society for Digital Earth"
-    domain: "Digital Earth"
+    classifier: "Earth and space science"
     tag:
       - union
     logo: null
     ror: null
-    rorId: null
     website: "https://www.digitalearth-isde.org"
     representative: null
 
   - id: "WAU"
     name: "World Anthropological Union"
-    domain: "Anthropology"
+    classifier: "Anthropology"
     tag:
       - union
     logo: null
     ror: null
-    rorId: null
     website: "https://www.waunet.org"
     representative: null
 
   - id: "IUSS"
     name: "International Union for Soil Science"
-    domain: "Soil Science"
+    classifier: "Earth and space science"
     tag:
       - union
     logo: null
     ror: null
-    rorId: null
     website: "https://www.iuss.org"
     representative: null
 
   - id: "URSI"
     name: "Union Radio Scientifique Internationale"
-    domain: "Radio Science"
+    classifier: "Physics"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/03esfes81"
-    rorId: "03esfes81"
+    ror: "03esfes81"
     website: "https://www.ursi.org"
     representative: null
 
   - id: "IUFoST"
     name: "International Union of Food Science and Technology"
-    domain: "Food Science and Technology"
+    classifier: "Technological Sciences"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/002e5rj75"
-    rorId: "002e5rj75"
+    ror: "002e5rj75"
     website: "https://iufost.org"
     representative: null
 
   - id: "IAU"
     name: "International Astronomical Union"
-    domain: "Astronomy"
+    classifier: "Astronomy, Astrophysics"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/05nex2951"
-    rorId: "05nex2951"
+    ror: "05nex2951"
     website: "https://www.iau.org"
     representative: null
 
   - id: "IUGG"
     name: "International Union of Geodesy and Geophysics"
-    domain: "Geodesy and Geophysics"
+    classifier: "Earth and space science"
     tag:
       - union
     logo: null
-    ror: "https://ror.org/01jachm79"
-    rorId: "01jachm79"
+    ror: "01jachm79"
     website: "https://www.iugg.org"
     representative: null
 
   - id: "ISPRS"
     name: "International Society for Photogrammetry and Remote Sensing"
-    domain: "Photogrammetry and Remote Sensing"
+    classifier: "Earth and space science"
     tag:
       - union
     logo: null
     ror: null
-    rorId: null
     website: "https://www.isprs.org"
     representative: null
