@@ -6,7 +6,7 @@ order: 5
 
 The DRUM Ambassador Program connects international scientific unions, metrology bodies, and domain communities to champion the digital representation and standardization of units of measurement across global science.
 
-- **Scientific Union Representation:** 28 international scientific unions and organizations collaborate to identify metrology challenges and domain-specific use cases.
+- **Scientific Union Representation:** {{ ambassadors.members | length }} international scientific unions and organizations collaborate to identify metrology challenges and domain-specific use cases.
 - **Cross-Domain Interoperability:** Ambassadors maintain active communication with DRUM and the Cross Domain Interoperability Framework (CDIF) metrology and technology experts.
 - **Advocacy & Collaboration:** Empowering disciplinary leaders to shape machine-actionable digital unit tools, databases, APIs, and models.
 
